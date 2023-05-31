@@ -4,14 +4,11 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
     // Capturar los valores ingresados por el usuario
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-
     // Construir el objeto JSON
     const data = {
       name: name,
       email: email
     };
-
-    
     // Enviar el JSON al servidor
     fetch('url-del-servidor', {
       method: 'POST',
@@ -28,4 +25,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       // Manejar errores
       console.error('Error:', error);
     });
-  });
+  });     
+  
+  
+  
