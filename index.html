@@ -4,55 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
-    <title>Ejemplo</title>
+    <title>Calculo pensiones</title>
+    
 </head>
 <body>
 
-    <header>
-       
+    <header>       
+   
+          <div class="img">
             <img src="assets/logoheader.svg" alt="logo de la compañia">
-        
-        
+          </div>
+          <div class="inst">IMSS</div>
     </header>
-
+ <main>
     <div class="container">
 
+      <h1>Proyeccion de tu jubilacion</h1>
 
     <form id="myForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name">
+        <label for="nss">Numero seguro social:</label>
+        <input type="text" id="nss" name="nss">
       
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      
-           
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      
-           
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      
-           
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      
-           
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      
-           
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-      
+    
+        <label for="fecha_ing">Fecha ingreso:</label>
+        <input type="date" id="fecha_ing" name="fecha_ing">
 
-        <button type="submit">Enviar</button>
+        <label for="Sexo">Genero:</label>
+        <select id="comboSexo">
+          <option value="H">Hombre</option>
+          <option value="M">Mujer</option>
+        </select>
+
+        <label for="combo">Estado Civil :</label>
+        <select id="combo" onchange="habilitarInput()">
+          <option value="soltero">Soltero</option>
+          <option value="casado">Casado</option>
+          <option value="viudo">Viudo</option>
+          <option value="divorciado">Divorciado</option>
+        </select>
+      
+       
+      
+        <label for="input">Edad del conyuge :</label>
+        <input type="number" id="input" disabled>
+      
+        <label for="sueldoCot">Sueldo de cotizacion :</label>
+        <input type="number" id="SueldoCot" placeholder="$" >
+
+        <label for="sueldoInd">Sueldo cuenta individual :</label>
+        <input type="number" id="sueldoInd" placeholder="$" >
+       
+        <br>
+        <button type="submit">Realizar Calculo</button>
       </form>
 
+     
     </div>
-      <script src="js/script.js"></script>
+      
+  </main>
+    <script src="/js/script.js">
+      
+    
+    </script>
 </body>
 </html>
   
