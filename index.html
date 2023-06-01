@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Calculo pensiones</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Calculo pensiones</title>
+
 </head>
+
 <body>
 
-    <header>       
-   
-          <div class="img">
-            <img src="assets/logoheader.svg" alt="logo de la compañia">
-          </div>
-          <div class="inst">IMSS</div>
-    </header>
- <main>
+  <header>
+
+    <div class="img">
+      <img src="assets/logoheader.svg" alt="logo de la compañia">
+    </div>
+    <div class="inst">IMSS</div>
+  </header>
+  <main>
     <div class="container">
 
       <h1>Proyeccion de tu jubilacion</h1>
 
-    <form id="myForm">
+      <form id="myForm">
         <label for="nss">Numero seguro social:</label>
         <input type="text" id="nss" name="nss">
-      
-    
-        <label for="fecha_ing">Fecha ingreso:</label>
-        <input type="date" id="fecha_ing" name="fecha_ing">
 
-        <label for="Sexo">Genero:</label>
-        <select id="comboSexo">
+
+        <label for="fechaIng">Fecha ingreso:</label>
+        <input type="date" id="fechaIng" name="fechaIng">
+
+        <label for="sexo">Genero:</label>
+        <select id="sexo">
           <option value="H">Hombre</option>
           <option value="M">Mujer</option>
         </select>
@@ -47,31 +49,41 @@
           <option value="viudo">Viudo</option>
           <option value="divorciado">Divorciado</option>
         </select>
-      
-       
-      
+
+
+
         <label for="input">Edad del conyuge :</label>
         <input type="number" id="input" disabled>
-      
-        <label for="sueldoCot">Sueldo de cotizacion :</label>
-        <input type="number" id="SueldoCot" placeholder="$" >
 
-        <label for="sueldoInd">Sueldo cuenta individual :</label>
-        <input type="number" id="sueldoInd" placeholder="$" >
-       
-        <br>
+        <label for="sueldoCot">Sueldo de cotizacion :</label>
+        <input type="number" step="any" id="sueldoCot" placeholder="$">
+     
+          <label for="sueldoInd">Sueldo cuenta individual :</label>
+          <input type="number" step="any" id="sueldoInd" placeholder="$">
+        
+          
+          <button type="submit">Consulta tu sueldo individual</button>
+     
+   
+
+     
         <button type="submit">Realizar Calculo</button>
       </form>
 
-     
+
     </div>
-      
+
   </main>
-    <script src="/js/script.js">
-      
-    
-    </script>
+
+  <footer>
+    <div class="contenedor">
+      <p>Elaborado por <a href="https://actuariales.com.mx/nif-d3-beneficio-a-empleados-pasivo-laboral?gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8qkbJw4jMI1e2JPLf3MADxNPf8yYbyUK5uE6_D3y6pIiEK94X6kcBoCr2AQAvD_BwE" target="_blank" >Valuaciones actuariales del norte</a></p>
+    </div>
+  </footer>
+  <script src="/js/script.js">
+
+
+  </script>
 </body>
+
 </html>
-  
- 
