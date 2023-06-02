@@ -40,19 +40,21 @@ header .inst {
     margin: 0 auto;
 }
 
+
 .container {
     width: 100%;
-    min-width: 320px;
+    min-width: 340px;
     margin: auto;
     padding: 25px;
+    background-color: #b7c9b72f;
 }
 
-.container h1 {
+.container h1 { 
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
     margin: 25px;
-    padding-left: 25px;
+    padding-left: 100px;
 }
 
 .container form {
@@ -63,6 +65,9 @@ header .inst {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+ 
+    padding-bottom: 50px;
+    padding-top: 25px;
 }
 
 .container form label {
@@ -74,12 +79,13 @@ header .inst {
 
 .container form input,
 select {
-    width: 100%;
+    width: 80%;
     height: 40px;
     border-radius: 10px;
     border: 2px solid #cecece;
     font-size: 1.5rem;
     align-self: center;
+    text-align: center;
 }
 
 .container form select {
@@ -103,9 +109,9 @@ select {
 .container form button {
     width: 80%;
     grid-row: 2fr;
-    justify-self: end;
+    justify-self: center;
     margin-top: 25px;
-    padding: 15px;
+    padding:10px 15px;
     border-radius: 15px;
     color: white;
     background-color: var(--fondo);
@@ -120,6 +126,7 @@ select {
 footer {
     margin-top: 50px;
     width: 100%;
+    min-width: 340px;
     height: 50px;
     background-color: #0c231e;
     display: flex;
@@ -128,12 +135,12 @@ footer {
 }
 
 footer p {
-    color: white;
+    color: rgb(197, 193, 193);
     font-size: 1.4rem;
 }
 
 footer a {
-    color: white;
+    color:white;
 }
 
 
@@ -148,17 +155,44 @@ footer a {
         justify-self: start;
         margin-right: 25px;
     }
-
+    .container h1 { 
+        padding: 0;
+    }
     .container form input[type="date"] ,
     .container form input[type="number"],
-    .container form select{
+    .container form select,
+    .container form input{
         width: 100%;
-        
+        text-align: center;
+    }
+    .container{
+        background-color: #b7c9b72f;
     }
     
-    
+    /* .container form button {
+        width: 100%;
+    } */
+}
 
+@media (max-width:1100px) {
+    .container form input[type="date"] ,
+    .container form input[type="number"],
+    .container form select,
+    .container form input{
+        width: 100%;
+        text-align: center;
+    }
     .container form button {
         width: 100%;
     }
 }
+
+/* Estilos de los resultados */
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+

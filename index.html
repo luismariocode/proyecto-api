@@ -25,29 +25,32 @@
   </header>
   <main>
     <div class="container">
-
-      <h1>Proyeccion de tu jubilacion</h1>
-
+     
+        <h1>PROYECCIÓN DE TU JUBILACIÓN</h1>
+      
+     
       <form id="myForm">
         <label for="nss">Numero seguro social:</label>
         <input type="text" id="nss" name="nss">
 
-
         <label for="fechaIng">Fecha ingreso:</label>
         <input type="date" id="fechaIng" name="fechaIng">
 
+        <label for="fechaNac">Fecha Nacimiento:</label>
+        <input type="date" id="fechaNac" name="fechaNac">
+
         <label for="sexo">Genero:</label>
         <select id="sexo">
-          <option value="H">Hombre</option>
-          <option value="M">Mujer</option>
+          <option value="M">Hombre</option>
+          <option value="F">Mujer</option>
         </select>
 
         <label for="combo">Estado Civil :</label>
         <select id="combo" onchange="habilitarInput()">
-          <option value="soltero">Soltero</option>
-          <option value="casado">Casado</option>
-          <option value="viudo">Viudo</option>
-          <option value="divorciado">Divorciado</option>
+          <option value="soltero">Soltero/a</option>
+          <option value="casado">Casado/a</option>
+          <option value="viudo">Viudo/a</option>
+          <option value="divorciado">Divorciado/a</option>
         </select>
 
 
@@ -58,8 +61,8 @@
         <label for="sueldoCot">Sueldo de cotizacion :</label>
         <input type="number" step="any" id="sueldoCot" placeholder="$">
      
-          <label for="sueldoInd">Sueldo cuenta individual :</label>
-          <input type="number" step="any" id="sueldoInd" placeholder="$">
+          <label for="saldoInd">Sueldo cuenta individual :</label>
+          <input type="number" step="any" id="saldoInd" placeholder="$">
         
           
           <button type="submit">Consulta tu sueldo individual</button>
@@ -77,7 +80,7 @@
 
   <footer>
     <div class="contenedor">
-      <p>Elaborado por <a href="https://actuariales.com.mx/nif-d3-beneficio-a-empleados-pasivo-laboral?gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8qkbJw4jMI1e2JPLf3MADxNPf8yYbyUK5uE6_D3y6pIiEK94X6kcBoCr2AQAvD_BwE" target="_blank" >Valuaciones actuariales del norte</a></p>
+      <p>Elaborado por - <a href="https://actuariales.com.mx/" target="_blank" >Valuaciones actuariales del norte </a></p>
     </div>
   </footer>
   <script src="/js/script.js">
