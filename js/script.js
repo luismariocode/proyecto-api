@@ -35,15 +35,11 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       estado : combo,
       edadC : edadC,
       sueldoCot : sueldoCot,
-      saldoInd : saldoInd
-      
+      saldoInd : saldoInd   
     }
 
     console.log(data);
     //activar el input edad del conyuge si se selecciona la opcion de casado
-    
-    
-
     // Enviar el JSON al servidor
     fetch('url-del-servidor', {
       method: 'POST',
@@ -61,11 +57,9 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       console.error('Error:', error);
     });
   
+    // window.location.href = "resultados.html";
 
-    window.location.href = "resultados.html";
   });     
-
-  
   //codigo que se puede usar para esperar la respuesta del servidor
 
    // Envía el JSON al servidor utilizando fetch
@@ -90,5 +84,8 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
 //     console.log(error);
 //   });
 // });
+
+
+//todo este codigo es para veificarse que este en correcto funcionmiento 
   
   

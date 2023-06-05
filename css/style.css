@@ -46,10 +46,9 @@ header .inst {
     min-width: 340px;
     margin: auto;
     padding: 25px;
-    background-color: #b7c9b72f;
 }
 
-.container h1 { 
+.container h1 {
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
@@ -65,7 +64,6 @@ header .inst {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
- 
     padding-bottom: 50px;
     padding-top: 25px;
 }
@@ -111,7 +109,7 @@ select {
     grid-row: 2fr;
     justify-self: center;
     margin-top: 25px;
-    padding:10px 15px;
+    padding: 10px 15px;
     border-radius: 15px;
     color: white;
     background-color: var(--fondo);
@@ -140,7 +138,7 @@ footer p {
 }
 
 footer a {
-    color:white;
+    color: white;
 }
 
 
@@ -155,33 +153,36 @@ footer a {
         justify-self: start;
         margin-right: 25px;
     }
-    .container h1 { 
+
+    .container h1 {
         padding: 0;
     }
-    .container form input[type="date"] ,
+
+    .container form input[type="date"],
     .container form input[type="number"],
     .container form select,
-    .container form input{
+    .container form input {
         width: 100%;
         text-align: center;
     }
-    .container{
-        background-color: #b7c9b72f;
-    }
-    
+
+  
+
     /* .container form button {
         width: 100%;
     } */
 }
 
 @media (max-width:1100px) {
-    .container form input[type="date"] ,
+
+    .container form input[type="date"],
     .container form input[type="number"],
     .container form select,
-    .container form input{
+    .container form input {
         width: 100%;
         text-align: center;
     }
+
     .container form button {
         width: 100%;
     }
@@ -190,9 +191,63 @@ footer a {
 /* Estilos de los resultados */
 table {
     border-collapse: collapse;
-}
-th, td {
-    border: 1px solid black;
-    padding: 8px;
+    font-size: 1.4rem;
 }
 
+th,
+td {
+    border: 1px solid var(--fondo);
+    padding: 8px;
+}
+table caption{
+    margin-bottom: 25px;
+}
+
+.tabla-container {
+    width: 80%;
+    min-width: 320px;
+    margin: 50px auto;
+    display: grid;
+    justify-content: center;
+    grid-gap:25px;
+    overflow-x: auto;
+}
+
+.tabla-titulo {
+    width: 70%;
+    min-width: 320px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--fondo);
+}
+
+.tabla-titulo h1 {
+    padding-top: 10px;
+}
+
+.tabla-titulo button {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    background-image: url(../assets/impresora.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.total-resultados{
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+}
+.total-resultados p{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    text-align: start;
+    
+}

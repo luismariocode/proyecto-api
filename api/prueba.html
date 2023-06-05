@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ventana de carga</title>
+    <style>
+        #cargando {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 30%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        #cargando .mensaje {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cargando">
+        <div class="mensaje">Cargando...</div>
+    </div>
+
+    <!-- Contenido de tu página -->
+    <h1>Bienvenido a mi sitio web</h1>
+    <!-- Resto de tu contenido -->
+
+    <script>
+        // Mostrar la ventana de carga
+        function mostrarCarga() {
+            document.getElementById("cargando").style.display = "block";
+        }
+
+        // Ocultar la ventana de carga
+        function ocultarCarga() {
+            document.getElementById("cargando").style.display = "none";
+        }
+        // Simulación de una llamada al servidor que toma 3 segundos
+        function llamarServidor() {
+            mostrarCarga();
+            setTimeout(function () {
+                // Hacer aquí lo que necesites con la respuesta del servidor
+                ocultarCarga();
+            }, 1000);
+        }
+        // Llamar a la función al cargar la página
+        llamarServidor();
+    </script>
+</body>
+</html>
