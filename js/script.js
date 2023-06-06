@@ -57,7 +57,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       console.error('Error:', error);
     });
   
-    // window.location.href = "resultados.html";
+    window.location.href = "resultados.html";
 
   });     
   //codigo que se puede usar para esperar la respuesta del servidor

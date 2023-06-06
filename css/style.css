@@ -17,6 +17,7 @@ html {
 header {
     width: 100%;
     height: 100px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     background-color: var(--fondo);
@@ -30,14 +31,14 @@ header .img {
 
 header img {
     width: 150px;
-    margin: 25px 0
+    margin: 25px 50px;
 }
 
 header .inst {
     color: white;
     font-size: 2.5rem;
     padding: 28px;
-    margin: 0 auto;
+    margin-right: 50px;
 }
 
 
@@ -142,6 +143,88 @@ footer a {
 }
 
 
+/* Estilos de los resultados */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.4rem;
+}
+th{
+    background-color: #0c231e;
+    color: white;
+    font-weight: 500;
+}
+th,
+td {
+    border: 1px solid var(--fondo);
+    padding: 8px;
+}
+table caption{
+    margin-bottom: 25px;
+}
+
+.tabla-container {
+    width: 50%;
+    min-width: 320px;
+    margin: 50px auto;
+    display: grid;
+    justify-content: center; 
+    grid-gap:25px;
+   
+   
+}
+.tabla-container .scroll{
+    overflow-x: auto;
+}
+.tabla-titulo {
+    width: 70%;
+    min-width: 320px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--fondo);
+}
+
+.tabla-titulo h1 {
+    padding-top: 20px;
+}
+
+.tabla-titulo button {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    background-image: url(../assets/pdf.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.total-resultados{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4,1fr);
+   
+}
+.total-resultados p{
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    text-align: start;
+    margin-bottom: 20px;
+    
+}
+
+
+
+
+/* media QUeries */
+
+
 @media (max-width:800px) {
     .container form {
         grid-template-columns: 1fr;
@@ -165,12 +248,17 @@ footer a {
         width: 100%;
         text-align: center;
     }
+    header img,
+    header .inst{
+        margin: 25px  auto;
+        padding-top: 15px;
+    }
 
-  
+     .total-resultados{
+        grid-template-columns: 1fr;
+    }
 
-    /* .container form button {
-        width: 100%;
-    } */
+   
 }
 
 @media (max-width:1100px) {
@@ -186,68 +274,4 @@ footer a {
     .container form button {
         width: 100%;
     }
-}
-
-/* Estilos de los resultados */
-table {
-    border-collapse: collapse;
-    font-size: 1.4rem;
-}
-
-th,
-td {
-    border: 1px solid var(--fondo);
-    padding: 8px;
-}
-table caption{
-    margin-bottom: 25px;
-}
-
-.tabla-container {
-    width: 80%;
-    min-width: 320px;
-    margin: 50px auto;
-    display: grid;
-    justify-content: center;
-    grid-gap:25px;
-    overflow-x: auto;
-}
-
-.tabla-titulo {
-    width: 70%;
-    min-width: 320px;
-    margin: 50px auto;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--fondo);
-}
-
-.tabla-titulo h1 {
-    padding-top: 10px;
-}
-
-.tabla-titulo button {
-    width: 35px;
-    height: 35px;
-    background-color: white;
-    background-image: url(../assets/impresora.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-    cursor: pointer;
-    
-}
-
-.total-resultados{
-    width: 70%;
-    margin: 0 auto;
-    display: block;
-}
-.total-resultados p{
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    text-align: start;
-    
 }

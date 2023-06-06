@@ -1,40 +1,58 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.4.0/dist/jspdf.umd.min.js"></script>
+
+    <title>Resultados</title>
 </head>
 
 <body>
 
     <header>
 
-        <div class="img">
+        <div class="contenido">
             <img src="assets/logoheader.svg" alt="logo de la compañia">
         </div>
         <div class="inst">IMSS</div>
     </header>
+
+
+    <div class="tabla-container"></div>
     <div class="tabla-titulo">
         <h1>Resultados</h1>
-        <button></button>
+        <button id="boton-generar-pdf"></button>
     </div>
-    
+
     <div class="tabla-container">
         <div class="total-resultados">
-            <p>Pension por renta</p>
-            <p>Pension minima</p>
-            <p></p>
+            <p> <b>NSS</b></p>
+            <p id="nss">-</p>
+            <p><b>Sueldo cotizacion</b></p>
+            <p>$</p>
+            <p><b>Saldo Cuenta individual</b></p>
+            <p>$</p>
+            <p><b>Pension por renta</b></p>
+            <p>$</p>
+            <br>
+            <p><b>Pension minima</b></p>
+            <p>$</p>
         </div>
-        
+        <div class="scroll">
+
+       
         <table id="resultados">
-            <caption> <h3>Proyeccion de cuenta individual</h3></caption>
-            <thead>   
-                           
+            <caption>
+                <h3>Proyeccion de cuenta individual</h3>
+            </caption>
+            <thead>
+
                 <tr>
                     <th>Edad</th>
                     <th>Antiguedad</th>
@@ -44,12 +62,17 @@
                 </tr>
             </thead>
             <tbody>
-               
+
             </tbody>
         </table>
     </div>
+
+    </div>
+
     <script>
-        
+
+
+
         var jsonResultados = '[{"edad":"25","Antiguedad":"61","sueldoCot":"$2500","saldoInd":"$2500","RentaVital":"2500"},{"edad":"25","Antiguedad":"61","SueldoCot":"$2500","saldoInd":"$2500","RentaVital":"2500" }]';
         // Parsear el JSON
         var resultados = JSON.parse(jsonResultados);
@@ -81,6 +104,50 @@
 
             tabla.appendChild(fila);
         });
+
+
+        function generarPDF() {
+            // Obtener la tabla HTML y sus estilos
+            const tabla = document.getElementById('imp');
+            const estilosTabla = window.getComputedStyle(tabla);
+
+            // Crear una instancia de jsPDF
+            window.jsPDF = window.jspdf.jsPDF;
+            const doc = new jsPDF();
+
+            // Generar el PDF con la tabla y estilos
+            doc.autoTable({ html: '#resultados', startY: 10, styles: { css: style.cssText } });
+
+            // Guardar el archivo PDF
+            doc.save('tabla.pdf');
+        }
+
+
+        // aqui se va generar el pdf con la informacion
+
+
+
+
+        const botonGenerarPDF = document.getElementById('boton-generar-pdf');
+        const contenidoDiv = document.getElementById('contenido');
+
+        // Función para generar el PDF al hacer clic en el botón
+        botonGenerarPDF.addEventListener('click', () => {
+            // Crear un nuevo objeto jsPDF
+            window.jsPDF = window.jspdf.jsPDF;
+            const doc = new jsPDF();
+
+            // Obtener el contenido del div
+            const contenido = contenidoDiv.innerHTML;
+
+            // Agregar el contenido al PDF
+            doc.fromHTML(contenido, 15, 15);
+
+            // Guardar el PDF en un archivo
+            doc.save('archivo.pdf');
+        });
+
+
     </script>
 </body>
 
