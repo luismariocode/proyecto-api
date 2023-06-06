@@ -35,10 +35,14 @@ header img {
 }
 
 header .inst {
-    color: white;
-    font-size: 2.5rem;
     padding: 28px;
     margin-right: 50px;
+}
+
+header .inst a{
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -58,12 +62,12 @@ header .inst {
 }
 
 .container form {
-    width: 50%;
+    width: 60%;
     min-width: 800px;
     margin: auto;
     min-width: 320px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     padding-bottom: 50px;
     padding-top: 25px;
@@ -216,7 +220,7 @@ table caption{
     line-height: 2.2rem;
     text-align: start;
     margin-bottom: 20px;
-    
+    color: rgb(77, 74, 74);
 }
 
 
@@ -249,13 +253,13 @@ table caption{
         text-align: center;
     }
     header img,
-    header .inst{
+    header .inst a{
         margin: 25px  auto;
-        padding-top: 15px;
+        
     }
 
      .total-resultados{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
    
