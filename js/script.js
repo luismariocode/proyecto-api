@@ -60,6 +60,10 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
      window.location.href = "resultados.html";
 
   });     
+
+  //codigo que se va a verificar que este correcto
+
+  
   //codigo que se puede usar para esperar la respuesta del servidor
 
    // Envía el JSON al servidor utilizando fetch

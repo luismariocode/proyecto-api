@@ -46,8 +46,7 @@
         </div>
         <div class="scroll">
 
-
-            <table id="resultados">
+        <table id="resultados">
                 <caption>
                     <h3>Proyeccion de cuenta individual</h3>
                 </caption>
@@ -111,7 +110,7 @@
         // Función para generar el PDF al hacer clic en el botón
         document.getElementById('generate-pdf-button').addEventListener('click', function () {
             // Obtener el contenido del div
-            var content = document.getElementsByClassName('table-container').innerHTML;
+            var content = document.getElementsByClassName('tabla-container').innerHTML;
 
             // Crear un nuevo objeto jsPDF
             window.jsPDF = window.jspdf.jsPDF;
