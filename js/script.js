@@ -56,16 +56,15 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       // Manejar errores
       console.error('Error:', error);
     });
-  
-     window.location.href = "resultados.html";
-
+    
+     window.location.href = "./api/prueba.html";
   });     
 
   //codigo que se va a verificar que este correcto
 
   
   //codigo que se puede usar para esperar la respuesta del servidor
-
+// ********************************************************************************
    // Envía el JSON al servidor utilizando fetch
 //    fetch("URL_DEL_SERVIDOR", {
 //     method: "POST",

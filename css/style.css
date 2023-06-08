@@ -49,7 +49,7 @@ header .inst a{
 .container {
     width: 100%;
     min-width: 340px;
-    margin: auto;
+    margin: 50px auto;
     padding: 25px;
 }
 
@@ -135,6 +135,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position:fixed;
+    bottom: 0;
 }
 
 footer p {
