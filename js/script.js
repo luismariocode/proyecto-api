@@ -1,4 +1,7 @@
 
+
+//activar el input edad del conyuge si se selecciona la opcion de casado
+
 function habilitarInput() {
   var combo = document.getElementById("combo");
   var input = document.getElementById("input");
@@ -38,8 +41,10 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       saldoInd : saldoInd   
     }
 
+
     console.log(data);
-    //activar el input edad del conyuge si se selecciona la opcion de casado
+    //se va verficar si se va realizar con fetch o con axios
+    
     // Enviar el JSON al servidor
     fetch('url-del-servidor', {
       method: 'POST',

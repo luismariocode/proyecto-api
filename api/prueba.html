@@ -63,8 +63,7 @@
   }
 }
 
-
-/* // KEYFRAMES ------------------------------------------------------------- */
+/* // KEYFRAMES -------------------------------------------------------------*/
 @keyframes spin {
   0%{
     transform: rotate(0deg);
@@ -121,6 +120,7 @@
           <div class="blue static"></div>
           <div class="white active"></div>        
         </div>
+      
       </div>
 
 
@@ -128,29 +128,33 @@
         // Mostrar la ventana de carga
         function mostrarCarga() {
             document.getElementById("loader").style.display = "block";
+        
         }
 
         // Ocultar la ventana de carga
         function ocultarCarga() {
             document.getElementById("loader").style.display = "none";
-            mostrarResultados();
+
         }
         function mostrarResultados(){
-            window.location.href = "./resultados.html";
+          window.open("../resultados.html", "_blank");
         }
         // Simulación de una llamada al servidor que toma 3 segundos
-        function llamarServidor() {
+        // function llamarServidor() {
             mostrarCarga();
            
             setTimeout(function () {
                 //         
+                window.open("..\resultados.html", "_blank");
+                mostrarResultados();
+
+
                 ocultarCarga();
-             
             }, 3000);
            
-        }
+        // }
         // Llamar a la función al cargar la página
-        llamarServidor();
+        // llamarServidor();
     
     </script>
 </body>

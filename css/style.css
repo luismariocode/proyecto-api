@@ -67,7 +67,7 @@ header .inst a{
     margin: auto;
     min-width: 320px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px;
     padding-bottom: 50px;
     padding-top: 25px;

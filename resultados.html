@@ -8,8 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jsPDF-master/dist/jspdf.es.min.js"></script>
     <script src="js/jsPDF-master/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="js/jsPDF-master/src/jspdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+
     <title>Resultados</title>
 </head>
 
@@ -27,7 +31,7 @@
 
     <div class="tabla-titulo">
         <h1>Resultados</h1>
-        <button id="generate-pdf-button"></button>
+        <button id="btnExportar"></button>
     </div>
 
     <div class="tabla-container">
@@ -46,7 +50,7 @@
         </div>
         <div class="scroll">
 
-        <table id="resultados">
+            <table id="resultados">
                 <caption>
                     <h3>Proyeccion de cuenta individual</h3>
                 </caption>
@@ -91,6 +95,7 @@
             celdaSueldoCot.textContent = resultado.sueldoCot;
             fila.appendChild(celdaSueldoCot);
 
+
             var celdaSaldoInd = document.createElement('td');
             celdaSaldoInd.textContent = resultado.saldoInd;
             fila.appendChild(celdaSaldoInd);
@@ -108,22 +113,12 @@
 
 
         // Función para generar el PDF al hacer clic en el botón
-        document.getElementById('generate-pdf-button').addEventListener('click', function () {
-            // Obtener el contenido del div
-            var content = document.getElementsByClassName('tabla-container').innerHTML;
+        document.getElementById("btnExportar").addEventListener("click", function () {
+            var contenidoDiv = document.getElementsByClassName("tabla-container");
 
-            // Crear un nuevo objeto jsPDF
-            window.jsPDF = window.jspdf.jsPDF;
-            var doc = new jsPDF();
-
-            // Agregar el contenido al documento PDF
-            doc.html(content, {
-                callback: function () {
-                    // Guardar el archivo PDF
-                    doc.save('archivo.pdf');
-                }
-            });
+            html2pdf().from(contenidoDiv).save();
         });
+
 
 
     </script>
