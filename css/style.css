@@ -49,7 +49,7 @@ header .inst a{
 .container {
     width: 100%;
     min-width: 340px;
-    margin: 50px auto;
+    margin: 25px auto;
     padding: 25px;
 }
 
@@ -59,6 +59,8 @@ header .inst a{
     text-align: center;
     margin: 25px;
     padding-left: 100px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(223, 170, 26);
 }
 
 .container form {
@@ -67,7 +69,7 @@ header .inst a{
     margin: auto;
     min-width: 320px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     padding-bottom: 50px;
     padding-top: 25px;
@@ -76,13 +78,13 @@ header .inst a{
 .container form label {
     font-size: 1.8rem;
     margin: 15px 0;
-    justify-self: end;
-
+    justify-self:normal;
+|
 }
 
 .container form input,
 select {
-    width: 80%;
+    width: 100%;
     height: 40px;
     border-radius: 10px;
     border: 2px solid #cecece;
@@ -92,20 +94,20 @@ select {
 }
 
 .container form select {
-    width: 80%;
+    width: 100%;
     text-align: center;
 }
 
 
 .container form input[type="date"] {
-    width: 80%;
+    width: 100%;
     text-align: center;
     font-size: 1.5rem;
 }
 
 .container form input[type="number"] {
-    width: 80%;
-    text-align: center;
+    width: 100%;
+    text-align:center;
     color: var(--fondo);
 }
 
@@ -120,10 +122,11 @@ select {
     background-color: var(--fondo);
     font-size: 1.8rem;
     cursor: pointer;
+    grid-area: span 2;
 }
 
 .container form button:hover {
-    background-color: #376b5f;
+    background-color: #f0b840;
 }
 
 footer {
