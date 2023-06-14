@@ -59,9 +59,11 @@
                     <tr>
                         <th>Edad</th>
                         <th>Antiguedad</th>
-                        <th>Sueldo cotizacion</th>
-                        <th>Saldo individual</th>
-                        <th>Renta vitalicia</th>
+                        <th>Sueldo Cotizacion</th>
+                        <th>Saldo de la Cuenta Individual</th>
+                        <th>Renta Vitalicia</th>
+                        <th>Pension Garantizada</th>
+                        <th>Pension Otorgada</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,8 +75,11 @@
     <script>
 
 
+        // modificar el json segun el formato que se va recibir 
 
-        var jsonResultados = '[{"edad":"25","Antiguedad":"61","sueldoCot":"$2500","saldoInd":"$2500","RentaVital":"2500"},{"edad":"25","Antiguedad":"61","SueldoCot":"$2500","saldoInd":"$2500","RentaVital":"2500" }]';
+        //Edad,Antiguedad,Sueldo,Saldo,RtaVit,PenGar, Pension
+
+        var jsonResultados = '[{"edad":"25","antiguedad":"61","sueldoCot":"$2500","saldoInd":"$2500","RentaVital":"2500"},{"edad":"25","Antiguedad":"61","SueldoCot":"$2500","saldoInd":"$2500","RentaVital":"2500" }]';
         // Parsear el JSON
         var resultados = JSON.parse(jsonResultados);
         // Obtener la referencia a la tabla

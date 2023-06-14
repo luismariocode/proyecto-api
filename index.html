@@ -28,14 +28,21 @@
 
       <h1>PROYECCIÓN DE TU JUBILACIÓN</h1>
 
+      <!-- input nss   semanas cotizadas al IMSS
+          fecha de ingreso como trabajador del IMSS
+          Saldo actual de la cuenta individual
+
+          estimar saldo cuenta check box
+          tasa de rendimiento anual esperado 2,3,4
+      -->
 
       <form id="myForm">
-        <label for="nss">Numero seguro social:</label>
-        <input type="text" id="nss" name="nss">
+        <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
+        <input type="text" id="semanasCot" name="semansCot">
 
-        <label for="fechaIng">Fecha ingreso:</label>
+        <label for="fechaIng">Fecha ingreso como trabajador al IMSS:</label>
         <input type="date" id="fechaIng" name="fechaIng">
-        <br>
+        
         <label for="fechaNac">Fecha nacimiento:</label>
         <input type="date" id="fechaNac" name="fechaNac">
         
@@ -44,7 +51,7 @@
           <option value="M">Hombre</option>
           <option value="F">Mujer</option>
         </select>
-        <br>
+        
         <label for="combo">Estado civil :</label>
         <select id="combo" onchange="habilitarInput()">
           <option value="soltero">Soltero/a</option>
@@ -57,14 +64,28 @@
 
         <label for="input">Edad del conyuge :</label>
         <input type="number" id="input" disabled>
-        <br>
+        
         <label for="sueldoCot">Sueldo de cotizacion :</label>
         <input type="number" step="any" id="sueldoCot" placeholder="$">
 
         <label for="saldoInd">Saldo cuenta individual :</label>
         <input type="number" step="any" id="saldoInd" placeholder="$">
+        <label for="comboInf">Has usado o piensas utilizar el INFONAVIT?</label>
+        <select id="comboInf">
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
         
+
+        <label for="comboTasa">Tasa de Rendimiento Anual Esperado</label>
+        <select id="comboTasa" >
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
         
+
+
         <button type="submit">C</button>
         <br><br>
         <button type="submit">Realizar Calculo</button>
@@ -74,7 +95,7 @@
   </main>
   <footer>
     <div class="contenedor">
-      <p>Elaborado por - <a href="https://actuariales.com.mx/" target="_blank">Valuaciones actuariales del norte </a>
+      <p>Simulador Elaborado por - <a href="https://actuariales.com.mx/" target="_blank">Valuaciones actuariales del norte </a>
       </p>
     </div>
   </footer>

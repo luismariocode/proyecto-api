@@ -20,7 +20,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
 
     // Capturar los valores ingresados por el usuario
 
-    const nss = document.getElementById('nss').value;
+    const semanasCot = document.getElementById('semanasCot').value;
     const fechaIng = document.getElementById('fechaIng').value;
     const fechaNac = document.getElementById('fechaNac').value
     const sexo = document.getElementById("sexo").value;
@@ -28,17 +28,20 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
     const edadC = document.getElementById("input").value;
     const sueldoCot = document.getElementById("sueldoCot").value;
     const saldoInd = document.getElementById("saldoInd").value;
-  
-    // Construir el objeto JSON asi es e formato del jason que se va mandar el servidor con el fetch
+    const infonavit = document.getElementById("comboInf").value
+    const tasa = document.getElementById("comboTasa").value
+    // Construir el objeto JSON asi es e formato del json que se va mandar el servidor con el fetch
     const data = {
-      nss: nss,
+      semanasCot: semanasCot,
       fechaIng: fechaIng,
       fechaNac: fechaNac,
-      Genero: sexo,
+      genero: sexo,
       estado : combo,
       edadC : edadC,
       sueldoCot : sueldoCot,
-      saldoInd : saldoInd   
+      saldoInd : saldoInd  , 
+      infonavit : infonavit ,
+      tasa : tasa
     }
 
 
@@ -62,10 +65,17 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
       console.error('Error:', error);
     });
     
-     window.location.href = "./api/prueba.html";
+    // window.location.href = "./api/prueba.html";
   });     
 
   //codigo que se va a verificar que este correcto
+
+
+  // codigo pára conocer el saldo de la cuenta individual
+
+       //boton 2
+
+
 
   
   //codigo que se puede usar para esperar la respuesta del servidor
