@@ -28,24 +28,42 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
     const edadC = document.getElementById("input").value;
     const sueldoCot = document.getElementById("sueldoCot").value;
     const saldoInd = document.getElementById("saldoInd").value;
-    const infonavit = document.getElementById("comboInf").value
-    const tasa = document.getElementById("comboTasa").value
+    const infonavit = document.getElementById("comboInf").value;
+    const tasa = document.getElementById("comboTasa").value;
+
+    const estimar_uno= document.getElementById("estimar_uno").Checked;
+    const estimar_dos= document.getElementById("estimar_dos").Checked;
+
+    var estimar;  
+    // verificar que opcion del chekbox selecciono el usuario
+    if (estimar_uno){
+      estimar= estimar_uno;
+    }
+    else{
+      estimar = estimar_dos;
+    }
     // Construir el objeto JSON asi es e formato del json que se va mandar el servidor con el fetch
+
     const data = {
-      semanasCot: semanasCot,
-      fechaIng: fechaIng,
-      fechaNac: fechaNac,
-      genero: sexo,
-      estado : combo,
-      edadC : edadC,
-      sueldoCot : sueldoCot,
-      saldoInd : saldoInd  , 
-      infonavit : infonavit ,
-      tasa : tasa
+
+      semanasCot: semanasCot, //semanas cotizadas ante el IMSS
+      fechaIng: fechaIng,     //fecha de ingreso como trabajador del IMSS
+      fechaNac: fechaNac,     // fecha de nacimiento 
+      genero: sexo,           //genero M , F
+      estado : combo,         //estado civil
+      edadC : edadC,          // Si se encuenta casa edad del conyuge
+      sueldoCot : sueldoCot,  //sueldo con el que cotiza al imss
+      saldoInd : saldoInd  ,  //saldo de la cuenta individual
+      infonavit : infonavit , //a usado se credito infonavit
+      tasa : tasa,             // a que tasa se va a realizar el calculo 
+      estimar: estimar        //estimar el saldo de tu cuenta individual
+
     }
 
 
     console.log(data);
+
+    
     //se va verficar si se va realizar con fetch o con axios
     
     // Enviar el JSON al servidor

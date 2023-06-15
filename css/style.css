@@ -76,10 +76,10 @@ header .inst a{
 }
 
 .container form label {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin: 15px 0;
     justify-self:normal;
-|
+
 }
 
 .container form input,
@@ -111,6 +111,18 @@ select {
     color: var(--fondo);
 }
 
+.container form #info_tasa{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('/assets/info.png');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    margin-left: 15px;
+  
+}
+
 .container form button {
     width: 80%;
     grid-row: 2fr;
@@ -124,7 +136,11 @@ select {
     cursor: pointer;
     grid-area: span 2;
 }
-
+.radio {
+    display: flex;
+    font-size: 1.4rem;
+    align-items: center;
+}
 .container form button:hover {
     background-color: #f0b840;
 }
@@ -153,6 +169,8 @@ footer a {
 
 
 /* Estilos de los resultados */
+/* ******************************************************************************************************* */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -175,20 +193,18 @@ table caption{
 .tabla-container {
     width: 50%;
     min-width: 320px;
-    margin: 50px auto;
+    margin: 15px auto;
     display: grid;
     justify-content: center; 
     grid-gap:25px;
    
    
 }
-.tabla-container .scroll{
-    /* overflow-x: auto; */
-}
+
 .tabla-titulo {
     width: 70%;
     min-width: 320px;
-    margin: 50px auto;
+    margin: 25px auto;
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;
@@ -217,7 +233,7 @@ table caption{
     margin: 0 auto;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(2,1fr);
    
 }
 .total-resultados p{
@@ -229,6 +245,28 @@ table caption{
 }
 
 
+.nav-bar{
+    min-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-color: #d1cfcf;
+}
+.nav-bar a,p{
+    margin-right: 15px;
+    font-size: 1.5rem;
+    padding: 15px;
+    /* background-color: #f0b840; */
+    text-decoration: none;
+    color: var(--fondo);
+}
+.nav-bar a:hover{
+    background-color: #bda32e;
+    color: white;
+}
+
+/* termino de los resultados */
+/* ******************************************************************************************************* */
 
 
 /* media QUeries */
