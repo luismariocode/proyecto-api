@@ -13,8 +13,29 @@ function habilitarInput() {
   }
 }
 
+//funcion en la ventana de resultados que me divide en 3 botones 
 
-//funcion que me va mandar el contneid del fomrulario en un json
+function mostrarResultado(divId) {
+  // Oculta todos los resultados
+  var resultados = document.getElementsByClassName('resultado');
+  for (var i = 0; i < resultados.length; i++) {
+    resultados[i].style.display = 'none';
+  }
+
+  // Muestra el resultado correspondiente al div seleccionado
+  var resultado = document.getElementById(divId);
+  resultado.style.display = 'block';
+}
+
+
+
+
+
+var semanasCotizadas;
+
+
+//Esta funcion me mada el contenido de mi JSON a la API
+
 document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Evitar el envío del formulario por defecto
 
@@ -61,18 +82,20 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
     }
     console.log(data);
    
-    //se va verficar si se va realizar con fetch o con axios
-  
+      // semanasCotizadas=semanasCot;
+      // document.getElementById("sc").textContent = params.get("semanasCot");
+
     // Enviar el JSON al servidor
-    fetch('url-del-servidor', {
+    fetch('http://192.168.1.235:8574/sntssrv.dll/api/rest/tsm/prueba', {
       method: 'POST',
+      mode: 'no-cors', 
       headers: {
         'Content-Type': 'application/json; charset=UTF-8'
       },
       body: JSON.stringify(data)  
     })
     .then(response => {
-      // Manejar la respuesta del servidor
+        // Manejar la respuesta del servidor
       console.log('Respuesta del servidor:', response);
     })
     .catch(error => {
@@ -82,36 +105,47 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
     
     // window.location.href = "./api/prueba.html";
   });     
+
+
+
+ 
+
+      // Hacer la distribucion para las tres tablas
+
+
+      var jsonResultados = "";
+      // Parsear el JSON el cual se va dividir en 3 difernetes tablas
+      var resultados = JSON.parse(jsonResultados);
+      // Obtener la referencia a la tabla
+      var tabla = document.getElementById('resultados-total');
+      // Recorrer los resultados y agregarlos a la tabla
+      resultados.forEach(function (resultado) {
+          var fila = document.createElement('tr');
+
+          var celdaEdad = document.createElement('td');
+          celdaEdad.textContent = resultado.edad;
+          fila.appendChild(celdaEdad);
+
+          var celdaAntiguedad = document.createElement('td');
+          celdaAntiguedad.textContent = resultado.Antiguedad;
+          fila.appendChild(celdaAntiguedad);
+
+          var celdaSueldoCot = document.createElement('td');
+          celdaSueldoCot.textContent = resultado.sueldoCot;
+          fila.appendChild(celdaSueldoCot);
+
+
+          var celdaSaldoInd = document.createElement('td');
+          celdaSaldoInd.textContent = resultado.saldoInd;
+          fila.appendChild(celdaSaldoInd);
+
+          var celdaRenta = document.createElement('td');
+          celdaRenta.textContent = resultado.RentaVital;
+          fila.appendChild(celdaRenta);
+          tabla.appendChild(fila);
+      });
+
+
   
-  //codigo que se va a verificar que este correcto
-  // codigo pára conocer el saldo de la cuenta individual
-       //boton 2  
-  //codigo que se puede usar para esperar la respuesta del servidor
-// ********************************************************************************
-   // Envía el JSON al servidor utilizando fetch
-//    fetch("URL_DEL_SERVIDOR", {
-//     method: "POST",
-//     body: JSON.stringify(data),
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-//   })
-//   .then(function(response) {
-//     if (response.ok) {
-//       return response.json();
-//     }
-//     throw new Error("Error en la respuesta del servidor.");
-//   })
-//   .then(function(responseJson) {
-//     // Aquí puedes procesar los resultados obtenidos del servidor y mostrarlos al usuario
-//     console.log(responseJson);
-//   })
-//   .catch(function(error) {
-//     console.log(error);
-//   });
-// });
-
-
-//todo este codigo es para veificarse que este en correcto funcionmiento 
   
   

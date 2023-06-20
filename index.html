@@ -49,7 +49,7 @@
 
       <form id="myForm">
         <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
-        <input type="text" id="semanasCot" name="semansCot">
+        <input type="text" id="semanasCot" name="semansCot" required>
 
         <label for="fechaIng">Fecha ingreso como trabajador al IMSS:</label>
         <input type="date" id="fechaIng" name="fechaIng">
@@ -77,10 +77,10 @@
         <input type="number" id="input" disabled>
         
         <label for="sueldoCot">Sueldo de cotizacion :</label>
-        <input type="number" step="any" id="sueldoCot" placeholder="$">
+        <input type="number" step="any" id="sueldoCot" placeholder="$" required>
 
         <label for="saldoInd">Saldo cuenta individual :</label>
-        <input type="number" step="any" id="saldoInd" placeholder="$">
+        <input type="number" step="any" id="saldoInd" placeholder="$" required>
         <label for="comboInf">¿Has Usado o Piensas Utilizar el INFONAVIT?</label>
         <select id="comboInf">
           <option value="Si">Si</option>
@@ -96,15 +96,15 @@
         </select>
 
 
-        <p>¿Estimar el Saldo de tu Cuenta Individual?</p>
+        <p id="text-checkbox">¿Estimar el Saldo de tu Cuenta Individual?</p>
         <div class="radio">
-          <input id="estimar_uno" type="checkbox" name="opcion" value="1"> Si
-          <input id="estimar_dos" type="checkbox" name="opcion" value="0"> No
+          <input id="estimar_uno" type="checkbox" name="opcion" value="1"><p>Si</p> 
+          <input id="estimar_dos" type="checkbox" name="opcion" value="0"><p>No</p>
         </div>
 
         <!-- <button type="submit">C</button> -->
-
-        <button type="submit">Realizar Calculo</button>
+        <br>
+        <button type="submit">Realizar Calculo <span id="btn-icon"></span></button>
       </form>
     </div>
 
@@ -118,7 +118,7 @@
   <script src="js/script.js">
 
 
-  </script>
+  </script> 
 </body>
 
 </html>

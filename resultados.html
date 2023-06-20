@@ -13,11 +13,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="js/jsPDF-master/src/jspdf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script> -->
+
+    <script src="js/script.js"></script>
     <style>
         .resultado {
-          display: none; /* Oculta todos los resultados inicialmente */
+            display: none;
+            /* Oculta todos los resultados inicialmente */
         }
-      </style>
+    </style>
 
     <title>Resultados</title>
 </head>
@@ -30,9 +33,10 @@
             <img src="assets/logoheader.svg" alt="logo de la compañia">
         </div>
         <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS</a></div>
+        <button id="loadDataBtn">Cargar Datos</button>
+
+
     </header>
-
-
 
     <div class="tabla-titulo">
         <h1>Resultados</h1>
@@ -54,45 +58,44 @@
             <div class="total-resultados">
                 <H1>TOTAL</H1><br>
                 <p> <b>Semanas cotizadas ante el IMSS</b></p>
-                <p id="nss">-</p>
+                <p id="sc">-</p>
                 <p><b>Sueldo cotizacion</b></p>
                 <p>$</p>
                 <p><b>Saldo Cuenta individual</b></p>
                 <p>$</p>
                 <p><b>Pension por renta</b></p>
                 <p>$</p>
-
                 <p><b>Pension minima</b></p>
                 <p>$</p>
             </div>
-<div class="scroll">
-            <div class="Total">
-                
-        <!-- //TOTAL
+            <div class="scroll">
+                <div class="Total">
+
+                    <!-- //TOTAL
         // Edad Antiguedad Sueldo saldo Total  RtaVitIMSS  RtaVitRJP PenGarIMSS Pension -->
 
-                <table id="resultados-total">
-                  
-                    <thead>
+                    <table id="resultados-total">
 
-                        <tr>
-                            <th>Edad</th>
-                            <th>Antiguedad</th>
-                            <th>Sueldo </th>
-                            <th>Saldo Total</th>
-                            <th>Renta Vitalicia IMSS</th>
-                            <th>Renta Vitalicia RJP</th>
-                            <th>Pension Garantizada IMSS</th>
-                            <th>Pension</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                        <thead>
 
-                    </tbody>
-                </table>
+                            <tr>
+                                <th>Edad</th>
+                                <th>Antiguedad</th>
+                                <th>Sueldo </th>
+                                <th>Saldo Total</th>
+                                <th>Renta Vitalicia IMSS</th>
+                                <th>Renta Vitalicia RJP</th>
+                                <th>Pension Garantizada IMSS</th>
+                                <th>Pension</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
-        </div>
         </div>
 
         <!-- 
@@ -103,7 +106,7 @@
             <div class="total-resultados">
                 <H1>IMSS</H1><br>
                 <p> <b>Semanas cotizadas ante el IMSS</b></p>
-                <p id="nss">-</p>
+                <p id="sc">-</p>
                 <p><b>Sueldo cotizacion</b></p>
                 <p>$</p>
                 <p><b>Saldo Cuenta individual</b></p>
@@ -114,30 +117,30 @@
                 <p><b>Pension minima</b></p>
                 <p>$</p>
             </div>
-<div class="scroll">
-            <div class="Total">
-                <table id="resultados-total">
-                     <!-- //IMSS -->
-        <!-- // Edad Antiguedad Sueldo saldoIMSS RtaVitIMSS PenGarIMSS PensionIMSS -->
-                    <thead>
+            <div class="scroll">
+                <div class="Total">
+                    <table id="resultados-total">
+                        <!-- //IMSS -->
+                        <!-- // Edad Antiguedad Sueldo saldoIMSS RtaVitIMSS PenGarIMSS PensionIMSS -->
+                        <thead>
 
-                        <tr>
-                            <th>Edad</th>
-                            <th>Antiguedad</th>
-                            <th>Sueldo</th>
-                            <th>Saldo IMSS</th>
-                            <th>Renta Vitalicia IMSS</th>
-                            <th>Pension Garantizada IMSS</th>
-                            <th>Pension IMSS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                            <tr>
+                                <th>Edad</th>
+                                <th>Antiguedad</th>
+                                <th>Sueldo</th>
+                                <th>Saldo IMSS</th>
+                                <th>Renta Vitalicia IMSS</th>
+                                <th>Pension Garantizada IMSS</th>
+                                <th>Pension IMSS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
+                </div>
             </div>
-        </div>
         </div>
 
         <div id="resultado3" class="resultado">
@@ -156,106 +159,74 @@
                 <p>$</p>
             </div>
             <div class="scroll">
-            <div class="Total">
-                <table id="resultados-total">
-                    
-                    
-                    <thead>
-                        <!-- //RJP
+                <div class="Total">
+                    <table id="resultados-total">
+
+
+                        <thead>
+                            <!-- //RJP
                         // Edad Antiguedad  Sueldo SaldoRJP RtaVitRJP PenGarRJP PensionRJP  -->
-                
-                
-                        <tr>
-                            <th>Edad</th>
-                            <th>Antiguedad</th>
-                            <th>Sueldo</th>
-                            <th>Saldo RJP</th>
-                            <th>Renta Vitalicia RPJ</th>
-                            <th>Pension Garantizada RJP</th>
-                            <th>Pension RPJ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                    </tbody>
-                </table>
 
+                            <tr>
+                                <th>Edad</th>
+                                <th>Antiguedad</th>
+                                <th>Sueldo</th>
+                                <th>Saldo RJP</th>
+                                <th>Renta Vitalicia RPJ</th>
+                                <th>Pension Garantizada RJP</th>
+                                <th>Pension RPJ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
-        </div>
     </div>
+
+
+
 
     <script>
 
 
+        document.getElementById('loadDataBtn').addEventListener('click', function () {
+            fetch('http://192.168.1.235:8574/sntssrv.dll/api/rest/tsm/prueba', { mode: 'no-cors' })
+                .then(response => response.json())
+                .then(data => {
+                    // Verifica que la respuesta sea válida antes de usar la variable 'data'
+                    if (data && data.length > 0) {
+                        var tableBody = document.getElementById('total-resultados').getElementsByTagName('tbody')[0];
 
-        //mostrar los diferntyes resultados 
+                        // Limpia la tabla antes de cargar nuevos datos
+                        tableBody.innerHTML = '';
 
-        function mostrarResultado(divId) {
-      // Oculta todos los resultados
-      var resultados = document.getElementsByClassName('resultado');
-      for (var i = 0; i < resultados.length; i++) {
-        resultados[i].style.display = 'none';
-      }
+                        // Itera sobre los datos del JSON devuelto por la API
+                        data.forEach(function (result) {
+                            var row = tableBody.insertRow();
+                            // Añade las celdas de acuerdo a las columnas de la tabla
+                            var cell1 = row.insertCell(0);
+                            cell1.innerHTML = result.columna1;
 
-      // Muestra el resultado correspondiente al div seleccionado
-      var resultado = document.getElementById(divId);
-      resultado.style.display = 'block';
-    }
+                            var cell2 = row.insertCell(1);
+                            cell2.innerHTML = result.columna2;
 
-        // modificar el json segun el formato que se va recibir 
-        //imss
-
-
-        //TOTAL
-        // Edad Antiguedad Sueldo saldo Total  RtaVitIMSS  RtaVitRJP PenGarIMSS Pension
-
-        //IMSS
-        // Edad Antiguedad Sueldo saldoIMSS RtaVitIMSS PenGarIMSS PensionIMSS
-
-        //RJP
-        // Edad Antiguedad  Sueldo SaldoRJP RtaVitRJP PenGarRJP PensionRJP 
-
-
-        var jsonResultados = "";
-        // Parsear el JSON el cual se va dividir en 3 difernetes tablas
-        var resultados = JSON.parse(jsonResultados);
-        // Obtener la referencia a la tabla
-        var tabla = document.getElementById('resultados-total');
-        // Recorrer los resultados y agregarlos a la tabla
-        resultados.forEach(function (resultado) {
-            var fila = document.createElement('tr');
-
-            var celdaEdad = document.createElement('td');
-            celdaEdad.textContent = resultado.edad;
-            fila.appendChild(celdaEdad);
-
-            var celdaAntiguedad = document.createElement('td');
-            celdaAntiguedad.textContent = resultado.Antiguedad;
-            fila.appendChild(celdaAntiguedad);
-
-            var celdaSueldoCot = document.createElement('td');
-            celdaSueldoCot.textContent = resultado.sueldoCot;
-            fila.appendChild(celdaSueldoCot);
-
-
-            var celdaSaldoInd = document.createElement('td');
-            celdaSaldoInd.textContent = resultado.saldoInd;
-            fila.appendChild(celdaSaldoInd);
-
-            var celdaRenta = document.createElement('td');
-            celdaRenta.textContent = resultado.RentaVital;
-            fila.appendChild(celdaRenta);
-
-            tabla.appendChild(fila);
+                            // Añade más celdas según los datos que deseas mostrar
+                        });
+                    } else {
+                        console.error('La respuesta de la API es inválida o está vacía.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:');
+                });
         });
 
-
-        var formularios = [];
-
-
-     
-
+        
 
     </script>
 </body>

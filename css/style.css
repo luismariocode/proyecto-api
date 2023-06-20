@@ -13,6 +13,9 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-size: 62.5%;
 }
+body{
+    font-size: 1.5rem;
+}
 
 header {
     width: 100%;
@@ -64,8 +67,8 @@ header .inst a{
 }
 
 .container form {
-    width: 60%;
-    min-width: 800px;
+    width: 65%;
+    /* min-width: 800px; */
     margin: auto;
     min-width: 320px;
     display: grid;
@@ -78,8 +81,8 @@ header .inst a{
 .container form label {
     font-size: 1.5rem;
     margin: 15px 0;
-    justify-self:normal;
-
+    justify-self:center ;
+    text-align: center;
 }
 
 .container form input,
@@ -123,12 +126,30 @@ select {
   
 }
 
+
+.radio {
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.radio input[type="checkbox"]{
+    width: 1.8rem;
+    margin-right: 15px;
+}
+
+#text-checkbox{
+    margin: 15px 0px;
+    text-align: center;
+}
+.radio p{
+    margin-right: 25px;
+}
+
 .container form button {
-    width: 80%;
+    width: 100%;
     grid-row: 2fr;
-    justify-self: center;
-    margin-top: 25px;
-    padding: 10px 15px;
+    padding: 10px 0px;
     border-radius: 15px;
     color: white;
     background-color: var(--fondo);
@@ -136,15 +157,23 @@ select {
     cursor: pointer;
     grid-area: span 2;
 }
-.radio {
-    display: flex;
-    font-size: 1.4rem;
-    align-items: center;
-}
+
+
 .container form button:hover {
-    background-color: #f0b840;
+    background-color: #dfaa1a;
 }
 
+
+.container form #btn-icon{
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/hoja-de-calculo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    display: inline-block;
+}
 footer {
     margin-top: 50px;
     width: 100%;
@@ -166,6 +195,8 @@ footer p {
 footer a {
     color: white;
 }
+
+
 
 
 /* Estilos de los resultados */
@@ -285,7 +316,7 @@ table caption{
     }
 
     .container form label {
-        font-size: 1.8rem;
+        /* font-size: 1.8rem; */
         margin: 15px 0;
         justify-self: start;
         margin-right: 25px;
