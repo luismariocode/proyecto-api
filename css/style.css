@@ -13,36 +13,33 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-size: 62.5%;
 }
-body{
+
+body {
     font-size: 1.5rem;
 }
 
 header {
     width: 100%;
     height: 100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     background-color: var(--fondo);
     min-width: 340px;
 }
 
-header .img {
-    width: 50%;
-    margin: 0 auto;
-}
 
 header img {
     width: 150px;
-    margin: 25px 50px;
+
 }
 
-header .inst {
-    padding: 28px;
-    margin-right: 50px;
+header .header-cont {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
 }
 
-header .inst a{
+header .inst a {
     font-size: 2.5rem;
     color: white;
     text-decoration: none;
@@ -52,41 +49,79 @@ header .inst a{
 .container {
     width: 100%;
     min-width: 340px;
-    margin: 25px auto;
+    margin: 0 auto;
     padding: 25px;
 }
 
+
 .container h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    
     text-align: center;
     margin: 25px;
-    padding-left: 100px;
+    font-weight: 500;
     padding-bottom: 15px;
     border-bottom: 2px solid rgb(223, 170, 26);
 }
 
-.container form {
-    width: 65%;
-    /* min-width: 800px; */
+.container .sub-titulo {
+    width: 70%;
+    margin: 25px auto;
+}
+
+.container .sub-titulo span {
+    color: red;
+    font-size: 1.5rem;
+}
+
+
+.container .pt1,
+.container .pt2,
+.container .pt3 {
+    width: 70%;
     margin: auto;
     min-width: 320px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 15% 25% 15% 25%;
+    justify-content: center;
     grid-gap: 10px;
-    padding-bottom: 50px;
-    padding-top: 25px;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    color: rgb(0, 3, 0);
+
+}
+
+.container .pt2 {
+    display: grid;
+    grid-template-columns: 20% 20% 30%;
+}
+
+.container .pt3 {
+    display: grid;
+    grid-template-columns: 30% 10% 30%;
+}
+
+.container .coment-pt1 {
+    width: 70%;
+    height: 35px;
+    margin: auto;
+    background-color: #444242;
+    padding-top: 5px;
+
+    color: rgb(255, 255, 255);
 }
 
 .container form label {
     font-size: 1.5rem;
     margin: 15px 0;
-    justify-self:center ;
+    justify-self: center;
     text-align: center;
 }
 
 .container form input,
-select {
+.container form select,
+.container form input[type="date"],
+.container form input[type="number"] {
     width: 100%;
     height: 40px;
     border-radius: 10px;
@@ -96,34 +131,17 @@ select {
     text-align: center;
 }
 
-.container form select {
-    width: 100%;
-    text-align: center;
-}
 
-
-.container form input[type="date"] {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.container form input[type="number"] {
-    width: 100%;
-    text-align:center;
-    color: var(--fondo);
-}
-
-.container form #info_tasa{
+.container form #info_tasa {
     display: inline-block;
     width: 25px;
     height: 25px;
     background-image: url('/assets/info.png');
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
     background-size: cover;
     margin-left: 15px;
-  
+
 }
 
 
@@ -133,38 +151,50 @@ select {
     align-items: center;
     justify-content: center;
 }
-.radio input[type="checkbox"]{
+
+.radio input[type="checkbox"] {
     width: 1.8rem;
     margin-right: 15px;
 }
 
-#text-checkbox{
+#text-checkbox {
     margin: 15px 0px;
     text-align: center;
 }
-.radio p{
+
+.radio p {
     margin-right: 25px;
 }
 
+
+.container form .boton {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+
+}
+
 .container form button {
-    width: 100%;
-    grid-row: 2fr;
+    width: 30%;
+    margin: auto;
     padding: 10px 0px;
     border-radius: 15px;
     color: white;
     background-color: var(--fondo);
     font-size: 1.8rem;
     cursor: pointer;
-    grid-area: span 2;
+
 }
 
 
 .container form button:hover {
-    background-color: #dfaa1a;
+    background-color: #54a18e;
 }
 
 
-.container form #btn-icon{
+.container form #btn-icon {
     width: 20px;
     height: 20px;
     background-image: url(../assets/hoja-de-calculo.png);
@@ -174,22 +204,45 @@ select {
     vertical-align: middle;
     display: inline-block;
 }
+
+.container #msj-info {
+    background-color: #fff9e0;
+    padding: 10PX;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.container #msj-info span{
+    color: red;
+
+}
+.container .msj {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+
+
 footer {
     margin-top: 50px;
     width: 100%;
     min-width: 340px;
-    height: 50px;
+    height: 100px;
+    padding-top: 25px;
     background-color: #0c231e;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position:fixed;
-    bottom: 0;
+    text-align: center;
+
 }
 
 footer p {
     color: rgb(197, 193, 193);
     font-size: 1.4rem;
+    line-height: 2.8rem;
 }
 
 footer a {
@@ -202,34 +255,25 @@ footer a {
 /* Estilos de los resultados */
 /* ******************************************************************************************************* */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1.4rem;
-}
-th{
-    background-color: #0c231e;
-    color: white;
-    font-weight: 500;
-}
-th,
-td {
-    border: 1px solid var(--fondo);
-    padding: 8px;
-}
-table caption{
-    margin-bottom: 25px;
+.tabla-titulo button {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    background-image: url(../assets/pdf.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+
 }
 
 .tabla-container {
-    width: 50%;
+    width: 70%;
     min-width: 320px;
     margin: 15px auto;
-    display: grid;
-    justify-content: center; 
-    grid-gap:25px;
-   
-   
+    display: grid;   
+    grid-gap: 25px;
 }
 
 .tabla-titulo {
@@ -244,47 +288,52 @@ table caption{
 
 .tabla-titulo h1 {
     padding-top: 20px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.container .resultados-resumen{
+    width: 70%;
+    margin:auto;
+    text-align: center;
+}
+.container .resultados-resumen .res-info{
+    width: 100%;
+    height: 35px;
+    background-color: #444242;
+    padding-top: 5px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 25px;
 }
 
-.tabla-titulo button {
-    width: 45px;
-    height: 45px;
-    background-color: white;
-    background-image: url(../assets/pdf.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-    cursor: pointer;
-    
-}
-
-.total-resultados{
+.total-resultados {
     width: 100%;
     min-width: 320px;
     margin: 35px auto;
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2,1fr);
-   
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
 }
-.total-resultados p{
+
+.total-resultados p {
     font-size: 1.4rem;
     line-height: 2.2rem;
     text-align: start;
     /* margin-bottom: 10px; */
-    color: rgb(77, 74, 74);
+    color: rgb(122, 121, 121);
 }
 
 
-.nav-bar{
+.nav-bar {
     min-width: 320px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
-   
+
 }
-.nav-bar button{
+
+.nav-bar button {
     margin-left: 35px;
     border-radius: 100%;
     font-size: 1.5rem;
@@ -295,24 +344,67 @@ table caption{
     cursor: pointer;
     border: none;
 }
+
 .nav-bar button:hover,
-.nav-bar button:focus{
+.nav-bar button:focus {
     background-color: #bda32e;
     color: white;
 }
 
+/* estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.4rem;
+}
 
+th {
+    background-color: #0c231e;
+    color: white;
+    font-weight: 500;
+}
 
+th,
+td {
+    border: 1px solid var(--fondo);
+    padding: 8px;
+}
+
+table caption {
+    margin-bottom: 25px;
+}
 /* termino de los resultados */
 /* ******************************************************************************************************* */
 
 
-/* media QUeries */
+/* media Queries */
 
 
-@media (max-width:800px) {
-    .container form {
+@media (max-width:900px) {
+
+    header .header-cont {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 25px;
+    }
+
+    .container .pt1,
+    .container .pt2,
+    .container .pt3 {
         grid-template-columns: 1fr;
+    }
+
+    .container form .boton button {
+        width: 100%;
+    }
+
+
+    .container .coment-pt1 {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 0;
     }
 
     .container form label {
@@ -333,24 +425,31 @@ table caption{
         width: 100%;
         text-align: center;
     }
+
     header img,
-    header .inst a{
-        margin: 25px  auto;
-        
+    header .inst a {
+        margin: 25px auto;
+
     }
 
-     .total-resultados{
+    .total-resultados {
         width: 320px;
         text-align: center;
         grid-template-columns: 1fr 1fr;
-        
+
     }
-  
-    .scroll{
+
+    .scroll {
         overflow-x: auto;
     }
-    .nav-bar button{
+
+    .nav-bar button {
         margin-left: 0px;
     }
-   
+
+
+    footer .contenedor{
+        text-align: center;
+    }
+
 }

@@ -8,11 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="js/jsPDF-master/dist/jspdf.es.min.js"></script>
-    <script src="js/jsPDF-master/dist/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="js/jsPDF-master/src/jspdf.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script> -->
+    <link rel="import" href="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js">
 
     <script src="js/script.js"></script>
     <style>
@@ -29,123 +25,49 @@
 
     <header>
 
-        <div class="contenido">
-            <img src="assets/logoheader.svg" alt="logo de la compañia">
-        </div>
-        <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS</a></div>
-        <button id="loadDataBtn">Cargar Datos</button>
 
+        <div class="header-cont">
+            <div class="img">
+                <img src="assets/logoheader.svg" alt="logo de la compañia">
+            </div>
+            <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS <br> y RJP</a></div>
+
+        </div>
 
     </header>
 
-    <div class="tabla-titulo">
-        <h1>Resultados</h1>
-        <button id="btnExportar"></button>
-    </div>
 
-    <div class="tabla-container">
+    <div class="container">
 
-        <div class="nav-bar">
-            <button onclick="mostrarResultado('resultado1')">TOTAL</button>
-            <button onclick="mostrarResultado('resultado2')">IMSS</button>
-            <button onclick="mostrarResultado('resultado3')">RJP</button>
+    <!-- 
+            <div class="tabla-titulo">
+                <div></div>
+                <button id="btnExportar"></button>
+            </div> -->
+
+
+        <div class="resultados-resumen">
+            <div class="res-info">
+                <p> Resultados
+                </p>
+
+            </div>
+            <h3>Total</h3>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem, placeat minus sed nihil!
+            </p>
+            <br><br>
+            <h3>IMSS</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nihil atque optio tempore, cumque voluptate amet molestiae dolorem eaque architecto odio, delectus suscipit, error fugiat quaerat vero eligendi vitae commodi.
+            </p>
+            <br>
+            <h3>RJP</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime, similique quis asperiores reiciendis, fugiat praesentium assumenda inventore, iste ad nam nisi minus totam velit. Quisquam quis labore laboriosam maxime.</p>
         </div>
 
 
-
-
-        <div id="resultado1" class="resultado">
+        <div class="tabla-container">
+            <H1>Resultados Generales</H1>
             <div class="total-resultados">
-                <H1>TOTAL</H1><br>
-                <p> <b>Semanas cotizadas ante el IMSS</b></p>
-                <p id="sc">-</p>
-                <p><b>Sueldo cotizacion</b></p>
-                <p>$</p>
-                <p><b>Saldo Cuenta individual</b></p>
-                <p>$</p>
-                <p><b>Pension por renta</b></p>
-                <p>$</p>
-                <p><b>Pension minima</b></p>
-                <p>$</p>
-            </div>
-            <div class="scroll">
-                <div class="Total">
-
-                    <!-- //TOTAL
-        // Edad Antiguedad Sueldo saldo Total  RtaVitIMSS  RtaVitRJP PenGarIMSS Pension -->
-
-                    <table id="resultados-total">
-
-                        <thead>
-
-                            <tr>
-                                <th>Edad</th>
-                                <th>Antiguedad</th>
-                                <th>Sueldo </th>
-                                <th>Saldo Total</th>
-                                <th>Renta Vitalicia IMSS</th>
-                                <th>Renta Vitalicia RJP</th>
-                                <th>Pension Garantizada IMSS</th>
-                                <th>Pension</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 
-
-        -->
-
-        <div id="resultado2" class="resultado">
-            <div class="total-resultados">
-                <H1>IMSS</H1><br>
-                <p> <b>Semanas cotizadas ante el IMSS</b></p>
-                <p id="sc">-</p>
-                <p><b>Sueldo cotizacion</b></p>
-                <p>$</p>
-                <p><b>Saldo Cuenta individual</b></p>
-                <p>$</p>
-                <p><b>Pension por renta</b></p>
-                <p>$</p>
-
-                <p><b>Pension minima</b></p>
-                <p>$</p>
-            </div>
-            <div class="scroll">
-                <div class="Total">
-                    <table id="resultados-total">
-                        <!-- //IMSS -->
-                        <!-- // Edad Antiguedad Sueldo saldoIMSS RtaVitIMSS PenGarIMSS PensionIMSS -->
-                        <thead>
-
-                            <tr>
-                                <th>Edad</th>
-                                <th>Antiguedad</th>
-                                <th>Sueldo</th>
-                                <th>Saldo IMSS</th>
-                                <th>Renta Vitalicia IMSS</th>
-                                <th>Pension Garantizada IMSS</th>
-                                <th>Pension IMSS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-        <div id="resultado3" class="resultado">
-            <div class="total-resultados">
-                <H1>RPJ</H1><br>
                 <p> <b>Semanas cotizadas ante el IMSS</b></p>
                 <p id="nss">-</p>
                 <p><b>Sueldo cotizacion</b></p>
@@ -158,77 +80,47 @@
                 <p><b>Pension minima</b></p>
                 <p>$</p>
             </div>
-            <div class="scroll">
-                <div class="Total">
-                    <table id="resultados-total">
 
 
-                        <thead>
-                            <!-- //RJP
-                        // Edad Antiguedad  Sueldo SaldoRJP RtaVitRJP PenGarRJP PensionRJP  -->
-
-
-                            <tr>
-                                <th>Edad</th>
-                                <th>Antiguedad</th>
-                                <th>Sueldo</th>
-                                <th>Saldo RJP</th>
-                                <th>Renta Vitalicia RPJ</th>
-                                <th>Pension Garantizada RJP</th>
-                                <th>Pension RPJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-
-                </div>
+            <div class="nav-bar">
+                <button onclick="mostrarResultado('resultado1')">TOTAL</button>
+                <button onclick="mostrarResultado('resultado2')">IMSS</button>
+                <button onclick="mostrarResultado('resultado3')">RJP</button>
             </div>
+
+
+
+
+            <div id="resultado1" class="resultado">
+                <table id="resultados-total">
+
+                    <thead>
+
+                        <tr>
+                            <th>Edad</th>
+                            <th>Antiguedad</th>
+                            <th>Sueldo </th>
+                            <th>Saldo Total</th>
+                            <th>Renta Vitalicia IMSS</th>
+                            <th>Renta Vitalicia RJP</th>
+                            <th>Pension Garantizada IMSS</th>
+                            <th>Pension</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- 
+                apartir de aqui va el codigo que se borro
+
+            -->
+
         </div>
     </div>
-
-
-
-
-    <script>
-
-
-        document.getElementById('loadDataBtn').addEventListener('click', function () {
-            fetch('http://192.168.1.235:8574/sntssrv.dll/api/rest/tsm/prueba', { mode: 'no-cors' })
-                .then(response => response.json())
-                .then(data => {
-                    // Verifica que la respuesta sea válida antes de usar la variable 'data'
-                    if (data && data.length > 0) {
-                        var tableBody = document.getElementById('total-resultados').getElementsByTagName('tbody')[0];
-
-                        // Limpia la tabla antes de cargar nuevos datos
-                        tableBody.innerHTML = '';
-
-                        // Itera sobre los datos del JSON devuelto por la API
-                        data.forEach(function (result) {
-                            var row = tableBody.insertRow();
-                            // Añade las celdas de acuerdo a las columnas de la tabla
-                            var cell1 = row.insertCell(0);
-                            cell1.innerHTML = result.columna1;
-
-                            var cell2 = row.insertCell(1);
-                            cell2.innerHTML = result.columna2;
-
-                            // Añade más celdas según los datos que deseas mostrar
-                        });
-                    } else {
-                        console.error('La respuesta de la API es inválida o está vacía.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:');
-                });
-        });
-
-        
-
-    </script>
 </body>
 
 </html>

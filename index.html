@@ -16,109 +16,150 @@
 
 <body>
   <header>
-    
-    <div class="img">
-      <img src="assets/logoheader.svg" alt="logo de la compañia">
+
+
+    <div class="header-cont">
+      <div class="img">
+        <img src="assets/logoheader.svg" alt="logo de la compañia">
+      </div>
+      <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS <br> y RJP</a></div>
+  
     </div>
-    <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS</a></div>
- 
+    
   </header>
   <main>
     <div class="container">
 
-      <h1>PROYECCIÓN DE TU JUBILACIÓN</h1>
+      <div class="sub-titulo"><h1>PROYECCIÓN APROXIMADA DE TU JUBILACIÓN</h1></div>
+      
 
-      <!-- input nss   semanas cotizadas al IMSS
-          fecha de ingreso como trabajador del IMSS
-          Saldo actual de la cuenta individual
-
-          estimar saldo cuenta check box
-          tasa de rendimiento anual esperado 2,3,4
-
-
-
-          ordenar todo el codigo verificar los escrip y la manera en la que se va a tabular la 
-          informacion 
-
-         *** font size
-             color
-             guardarlos en root y usar variables
-             
-             
-      -->
 
       <form id="myForm">
-        <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
-        <input type="text" id="semanasCot" name="semansCot" required>
-
-        <label for="fechaIng">Fecha ingreso como trabajador al IMSS:</label>
-        <input type="date" id="fechaIng" name="fechaIng">
-        
-        <label for="fechaNac">Fecha nacimiento:</label>
-        <input type="date" id="fechaNac" name="fechaNac">
-        
-        <label for="sexo">Genero:</label>
-        <select id="sexo">
-          <option value="M">Hombre</option>
-          <option value="F">Mujer</option>
-        </select>
-        
-        <label for="combo">Estado civil:</label>
-        <select id="combo" onchange="habilitarInput()">
-          <option value="soltero">Soltero/a</option>
-          <option value="casado">Casado/a</option>
-          <option value="viudo">Viudo/a</option>
-          <option value="divorciado">Divorciado/a</option>
-        </select>
-
-
-
-        <label for="input">Edad del conyuge:</label>
-        <input type="number" id="input" disabled>
-        
-        <label for="sueldoCot">Sueldo de cotizacion :</label>
-        <input type="number" step="any" id="sueldoCot" placeholder="$" required>
-
-        <label for="saldoInd">Saldo cuenta individual :</label>
-        <input type="number" step="any" id="saldoInd" placeholder="$" required>
-        <label for="comboInf">¿Has Usado o Piensas Utilizar el INFONAVIT?</label>
-        <select id="comboInf">
-          <option value="Si">Si</option>
-          <option value="No">No</option>
-        </select>
-        
-
-        <label for="comboTasa">Tasa de Rendimiento Anual Esperado</label>
-        <select id="comboTasa" >
-          <option value="2%">2%</option>
-          <option value="3%">3%</option>
-          <option value="4%">4%</option>
-        </select>
-
-
-        <p id="text-checkbox">¿Estimar el Saldo de tu Cuenta Individual?</p>
-        <div class="radio">
-          <input id="estimar_uno" type="checkbox" name="opcion" value="1"><p>Si</p> 
-          <input id="estimar_dos" type="checkbox" name="opcion" value="0"><p>No</p>
+        <div class="sub-titulo">  
+          <p><span>*</span>PARA PODER REALIZAR LA PROYECCION DE TU JUBILACION NECESITO QUE ME AYUDES COMPLETANDO LA SIGUIENTE INFORMACION:</p>
+        </div>
+          <div class="coment-pt1">
+         
         </div>
 
-        <!-- <button type="submit">C</button> -->
-        <br>
-        <button type="submit">Realizar Calculo <span id="btn-icon"></span></button>
+        <div class="pt1">
+
+          <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
+          <input type="text" id="semanasCot" name="semansCot" required>
+
+          <label for="fechaIng">Fecha ingreso al RJP:</label>
+          <input type="date" id="fechaIng" name="fechaIng">
+
+
+          <label for="edadActual">Edad Actual</label>
+          <input type="number" id="edadActual" name="edadActual">
+
+          <label for="sexo">Genero:</label>
+          <select id="sexo">
+            <option value="M">Hombre</option>
+            <option value="F">Mujer</option>
+          </select>
+
+          <label for="estadoC">Estado civil:</label>
+          <select id="estadoC" onchange="habilitarInput()">
+            <option value="soltero">Soltero/a</option>
+            <option value="casado">Casado/a</option>
+            <option value="viudo">Viudo/a</option>
+            <option value="divorciado">Divorciado/a</option>
+          </select>
+
+
+
+          <!-- edadCon = edad del conyuge -->
+          <label id="lbl-estadoC" for="edadCon" hidden>Edad del conyuge:</label>
+          <input type="number" id="edadCon" hidden>
+
+
+        </div>
+
+        <div class="coment-pt1">
+
+        </div>
+        <div class="pt2">
+
+          <label for="sueldoCot">Sueldo de cotizacion :</label>
+          <input type="number" step="any" id="sueldoCot" placeholder="$">
+
+          <div id="msj-info">
+            <p> <span>*</span> sueldo mensual sobre el cual trabajador y patron aportaran a la cuenta individual del afiliado</p>
+          </div>
+
+          <label for="saldoIMSS">Saldo cuenta individual IMSS:</label>
+          <input type="number" step="any" id="saldoIMSS" placeholder="$" >
+          <div id="msj-info">
+            <p> <span>*</span> monto acumulado en la cuenta individual </p>
+          </div>
+          <p id="text-checkbox">No conozco mi saldo individual IMSS</p>
+          <div class="radio">
+            <input id="estimarIMSS" type="checkbox" name="opcion"  onclick="checkBoxClicked()">*
+          </div>
+          <div id="msj-info">
+            <p> <span>*</span> En caso de que no conozcas tu saldo individal del IMSS se realizara una estimacion para poder realizar los calculos</p>
+          </div>
+          
+          <label for="saldoRJP">Saldo cuenta individual RJP:</label>
+          <input type="number" step="any" id="saldoRJP" placeholder="$" >
+          <div id="msj-info">
+            <p> <span>*</span> monto acumulado en la cuenta individual </p>
+          </div>
+          <p id="text-checkbox">No conozco mi saldo individual RJP</p>
+          <div class="radio">
+            <input id="estimarRJP" type="checkbox" name="opcion" onclick="checkBoxClicked()" >*
+          </div>
+          <div id="msj-info">
+            <p> <span>*</span> En caso de que no conozcas tu saldo individal del RJP se realizara una estimacion para poder realizar los calculos</p>
+          </div>
+        </div>
+        <div class="coment-pt1">
+         
+        </div>
+
+        <div class="pt3">
+          <label for="comboInf">¿Has Usado o Piensas Utilizar el INFONAVIT?</label>
+          <select id="comboInf">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+          </select>
+          <div id="msj-info">
+            <p> <span>*</span> La tasa de rendimiento anual esperada es ....</p>
+          </div>
+
+          <label for="comboTasa">Tasa de Rendimiento Anual Esperado Por Ariba de la Inflaccion</label>
+          <select id="comboTasa">
+            <option value="2%">2%</option>
+            <option value="3%">3%</option>
+            <option value="4%">4%</option>
+          </select>
+          <div id="msj-info">
+            <p> <span>*</span> es la tasa de rendimiento anual que se supondria la cuenta individual obtenga en promedio  a lo largo del periodo de cotizacion 
+            </p>
+          </div>
+
+        </div>
+        <div class="msj">
+          <p><span>*</span>RECUERDA QUE ESTE ES UN SIMULADOR POR LO CUAL LOS RESULTADOS QUE SE ARROJEN SON <B>APROXIMACIONES</B></p>
+        </div>
+        <div class="boton">
+          <button type="submit">Realizar Calculo <span id="btn-icon"></span></button>
+        </div>
+
       </form>
     </div>
 
   </main>
   <footer>
     <div class="contenedor">
-      <p>Simulador Elaborado por - <a href="https://actuariales.com.mx/" target="_blank">Valuaciones Actuariales del Norte </a>
+      <p>Simulador Elaborado por <br> <a href="https://actuariales.com.mx/" target="_blank">Valuaciones Actuariales del
+          Norte </a>
       </p>
     </div>
   </footer>
-  <script src="js/script.js">
-
-
-  </script> 
+  <script src="js/script.js"> </script>
 </body>
 
 </html>
