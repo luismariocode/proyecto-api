@@ -9,12 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="import" href="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js">
-
+    
     <script src="js/script.js"></script>
     <style>
-        .resultado {
+        .resultados-ocultos {
             display: none;
             /* Oculta todos los resultados inicialmente */
+        }
+
+        .resultado #resultado1 {
+            display: block;
         }
     </style>
 
@@ -39,7 +43,7 @@
 
     <div class="container">
 
-    <!-- 
+        <!-- 
             <div class="tabla-titulo">
                 <div></div>
                 <button id="btnExportar"></button>
@@ -48,78 +52,124 @@
 
         <div class="resultados-resumen">
             <div class="res-info">
-                <p> Resultados
+                <p> Resumen
                 </p>
 
             </div>
             <h3>Total</h3>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem, placeat minus sed nihil!
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit
+                asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem,
+                placeat minus sed nihil!
             </p>
             <br><br>
             <h3>IMSS</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nihil atque optio tempore, cumque voluptate amet molestiae dolorem eaque architecto odio, delectus suscipit, error fugiat quaerat vero eligendi vitae commodi.
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nihil atque optio tempore, cumque
+                voluptate amet molestiae dolorem eaque architecto odio, delectus suscipit, error fugiat quaerat vero
+                eligendi vitae commodi.
             </p>
             <br>
             <h3>RJP</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime, similique quis asperiores reiciendis, fugiat praesentium assumenda inventore, iste ad nam nisi minus totam velit. Quisquam quis labore laboriosam maxime.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime, similique quis asperiores
+                reiciendis, fugiat praesentium assumenda inventore, iste ad nam nisi minus totam velit. Quisquam quis
+                labore laboriosam maxime.</p>
         </div>
 
 
-        <div class="tabla-container">
-            <H1>Resultados Generales</H1>
-            <div class="total-resultados">
-                <p> <b>Semanas cotizadas ante el IMSS</b></p>
-                <p id="nss">-</p>
-                <p><b>Sueldo cotizacion</b></p>
-                <p>$</p>
-                <p><b>Saldo Cuenta individual</b></p>
-                <p>$</p>
-                <p><b>Pension por renta</b></p>
-                <p>$</p>
-
-                <p><b>Pension minima</b></p>
-                <p>$</p>
-            </div>
-
-
-            <div class="nav-bar">
-                <button onclick="mostrarResultado('resultado1')">TOTAL</button>
-                <button onclick="mostrarResultado('resultado2')">IMSS</button>
-                <button onclick="mostrarResultado('resultado3')">RJP</button>
-            </div>
-
-
-
-
-            <div id="resultado1" class="resultado">
-                <table id="resultados-total">
-
-                    <thead>
-
-                        <tr>
-                            <th>Edad</th>
-                            <th>Antiguedad</th>
-                            <th>Sueldo </th>
-                            <th>Saldo Total</th>
-                            <th>Renta Vitalicia IMSS</th>
-                            <th>Renta Vitalicia RJP</th>
-                            <th>Pension Garantizada IMSS</th>
-                            <th>Pension</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-
-            </div>
-
-            <!-- 
-                apartir de aqui va el codigo que se borro
-
-            -->
-
+        <div class="result-pro-titulo">
+            <H1 id="result-pro-h1">Resultados de tu Proyeccion</H1>
         </div>
+
+        <div class="total-resultados">
+
+            <p>Semanas cotizadas ante el IMSS</p>
+            <p id="nss">-</p>
+            <p>Sueldo cotizacion</p>
+            <p>$</p>
+            <p>Saldo Cuenta individual</p>
+            <p>$</p>
+            <p>Pension por renta</p>
+            <p>$</p>
+
+            <p>Pension minima</p>
+            <p>$</p>
+        </div>
+
+
+        <div class="nav-bar">
+            <button onclick="mostrarResultado('resultado1')">TOTAL ></button>
+            <button onclick="mostrarResultado('resultado2')">IMSS ></button>
+            <button onclick="mostrarResultado('resultado3')">RJP </button>
+        </div>
+
+
+
+
+        <div id="resultado1" class="resultado">
+            <table id="resultados-total">
+                <thead>
+                    <tr>
+                        <th>Edad</th>
+                        <th>Antiguedad</th>
+                        <th>Sueldo </th>
+                        <th>Saldo Total</th>
+                        <th>Renta Vitalicia IMSS</th>
+                        <th>Renta Vitalicia RJP</th>
+                           <!-- <th>Pension Garantizada IMSS</th> -->
+                        <th>Pension</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div id="resultado2" class="resultado resultados-ocultos" >
+            <table id="resultados-total">
+                <thead>
+                    <tr>
+                        <th>Edad</th>
+                        <th>Antiguedad</th>
+                        <th>Sueldo</th>
+                        <th>Saldo IMSS</th>
+                        <th>Renta Vitalicia IMSS</th>
+                        <th>Pension Garantizada IMSS</th>
+                        <th>Pension IMSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div id="resultado3" class="resultado resultados-ocultos">
+            <table id="resultados-total">
+                <thead>
+                    <tr>
+                        <th>Edad</th>
+                        <th>Antiguedad</th>
+                        <th>Sueldo</th>
+                        <th>Saldo RJP</th>
+                        <th>Renta Vitalicia RJP</th>
+                        <th>Pension Garantizada RJP</th>
+                        <th>Pension RJP</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="boton">
+            <button>GENERAR<span></span></button>
+        </div>
+
     </div>
 </body>
 

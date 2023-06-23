@@ -8,10 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 
   <title>Calculo pensiones</title>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 </head>
 
 <body>
@@ -45,7 +46,7 @@
         <div class="pt1">
 
           <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
-          <input type="text" id="semanasCot" name="semansCot" required>
+          <input type="text" id="semanasCot" name="semansCot" >
 
           <label for="fechaIng">Fecha ingreso al RJP:</label>
           <input type="date" id="fechaIng" name="fechaIng">
@@ -144,6 +145,7 @@
         <div class="msj">
           <p><span>*</span>RECUERDA QUE ESTE ES UN SIMULADOR POR LO CUAL LOS RESULTADOS QUE SE ARROJEN SON <B>APROXIMACIONES</B></p>
         </div>
+        
         <div class="boton">
           <button type="submit">Realizar Calculo <span id="btn-icon"></span></button>
         </div>

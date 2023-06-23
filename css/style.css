@@ -53,20 +53,25 @@ header .inst a {
     padding: 25px;
 }
 
+.container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
 
-.container h1 {
+
+.container  h1 {
     font-size: 2.5rem;
-    
     text-align: center;
     margin: 25px;
     font-weight: 500;
     padding-bottom: 15px;
-    border-bottom: 2px solid rgb(223, 170, 26);
+    border-bottom: 2px solid var(--fondo);
 }
 
 .container .sub-titulo {
     width: 70%;
     margin: 25px auto;
+    text-align: center;
 }
 
 .container .sub-titulo span {
@@ -105,7 +110,7 @@ header .inst a {
     width: 70%;
     height: 35px;
     margin: auto;
-    background-color: #444242;
+    background-color: var(--fondo);
     padding-top: 5px;
 
     color: rgb(255, 255, 255);
@@ -220,7 +225,7 @@ header .inst a {
     width: 70%;
     margin: auto;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 15px;
 
 }
 
@@ -272,8 +277,10 @@ footer a {
     width: 70%;
     min-width: 320px;
     margin: 15px auto;
-    display: grid;   
+    display: grid;  
+    justify-content: center; 
     grid-gap: 25px;
+    overflow: hidden;
 }
 
 .tabla-titulo {
@@ -285,73 +292,126 @@ footer a {
     padding-bottom: 15px;
     border-bottom: 1px solid var(--fondo);
 }
+.result-pro-titulo{
+    width: 70%;
+    background-color: var(--fondo);
+    margin: auto;
+    color: white;
 
-.tabla-titulo h1 {
-    padding-top: 20px;
+}
+.result-pro-titulo #result-pro-h1 {
+   padding-top: 10px;
     font-weight: 500;
     font-size: 1.5rem;
     font-weight: 500;
+
+
 }
 .container .resultados-resumen{
     width: 70%;
     margin:auto;
     text-align: center;
+    line-height: 2.5rem;
+    background-color: #f3f1e8;
+    padding-bottom: 25px;
 }
 .container .resultados-resumen .res-info{
     width: 100%;
     height: 35px;
-    background-color: #444242;
+    background-color: var(--fondo);
     padding-top: 5px;
     color: white;
     font-weight: 500;
     margin-bottom: 25px;
+    
 }
 
-.total-resultados {
-    width: 100%;
-    min-width: 320px;
-    margin: 35px auto;
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(2, 1fr);
-}
+
+    .total-resultados {
+        width: 70%;
+        min-width: 320px;
+        margin: 35px auto;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 20% 15% 20% 15%;
+        grid-gap: 10px;
+    }
 
 .total-resultados p {
-    font-size: 1.4rem;
+    font-size: 1.rem;
     line-height: 2.2rem;
     text-align: start;
+  
     /* margin-bottom: 10px; */
-    color: rgb(122, 121, 121);
+    color: rgb(0, 0, 0);
 }
 
+.resultado{
+    width: 70%;
+    margin: auto;
+    overflow-x: auto;
+}
 
 .nav-bar {
     min-width: 320px;
-    margin: 0 auto;
+    margin: 50px auto 20px auto;
     display: flex;
     justify-content: center;
 
 }
 
 .nav-bar button {
-    margin-left: 35px;
-    border-radius: 100%;
+     /* margin-left: 35px; */
+    border-right: 5px solid gray;
     font-size: 1.5rem;
     padding: 20px 15px;
     text-decoration: none;
-    background-color: #0c231e;
-    color: white;
+    background-color: #ffffff;
+    color: var(--fondo);
     cursor: pointer;
     border: none;
 }
 
 .nav-bar button:hover,
 .nav-bar button:focus {
-    background-color: #bda32e;
-    color: white;
+    text-decoration: underline;
+    
 }
 
-/* estilos de la tabla */
+.container .boton{
+    width: 30%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+.container .boton button{
+    padding: 15px 45px;
+    background-color: var(--fondo);
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.container .boton button:hover{
+    background-color: #54a18e;
+
+}
+.container .boton button span{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-image: url(../assets/pdf.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 15px;
+    vertical-align: text-bottom;
+}
+
+
+/* estilos de la tabla *********************************************/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -359,14 +419,16 @@ table {
 }
 
 th {
-    background-color: #0c231e;
+    background-color: var(--fondo);
     color: white;
     font-weight: 500;
+    
 }
 
 th,
 td {
-    border: 1px solid var(--fondo);
+    
+    border: 1px solid rgb(255, 249, 196);
     padding: 8px;
 }
 
@@ -451,5 +513,17 @@ table caption {
     footer .contenedor{
         text-align: center;
     }
+
+
+    /* pagina de resultados  */
+    .container .resultados-resumen,
+    .container .resultado,
+    .container .total-resultados,
+    .container .result-pro-titulo{
+        width: 100%;
+     
+    }
+
+
 
 }
