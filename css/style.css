@@ -20,15 +20,19 @@ body {
 
 header {
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: var(--fondo);
     min-width: 340px;
 }
 
 
-header img {
-    width: 150px;
-
+header .img img{
+    width: 300px;
+    margin: 0;
+    padding: 0;
+}
+header .img{
+    padding-bottom: 10px;
 }
 
 header .header-cont {
@@ -38,11 +42,14 @@ header .header-cont {
     justify-content: space-between;
     padding: 15px 25px;
 }
-
+header .inst {
+    padding-top: 20px;
+}
 header .inst a {
     font-size: 2.5rem;
     color: white;
     text-decoration: none;
+    padding-top:70px ;
 }
 
 
@@ -65,7 +72,7 @@ header .inst a {
     margin: 25px;
     font-weight: 500;
     padding-bottom: 15px;
-    border-bottom: 2px solid var(--fondo);
+    /* border-bottom: 2px solid var(--fondo); */
 }
 
 .container .sub-titulo {
@@ -84,12 +91,14 @@ header .inst a {
 .container .pt2,
 .container .pt3 {
     width: 70%;
+    height: auto;
     margin: auto;
     min-width: 320px;
     display: grid;
     grid-template-columns: 15% 25% 15% 25%;
     justify-content: center;
     grid-gap: 10px;
+    
     padding-bottom: 35px;
     padding-top: 35px;
     color: rgb(0, 3, 0);
@@ -106,14 +115,17 @@ header .inst a {
     grid-template-columns: 30% 10% 30%;
 }
 
+
 .container .coment-pt1 {
-    width: 70%;
-    height: 35px;
     margin: auto;
     background-color: var(--fondo);
-    padding-top: 5px;
-
-    color: rgb(255, 255, 255);
+    padding-top: 5px;  
+    color: rgb(255, 255, 255);       
+    width: 100%;
+    height: .2rem;
+    font-size: .1rem;
+    padding: 0;
+    width: 70%;      
 }
 
 .container form label {
@@ -209,7 +221,10 @@ header .inst a {
     vertical-align: middle;
     display: inline-block;
 }
+.container .msg-montoIMSS{
+   grid-column-start: span 3;
 
+}
 .container #msj-info {
     background-color: #fff9e0;
     padding: 10PX;
@@ -333,7 +348,9 @@ footer a {
         margin: 35px auto;
         display: grid;
         justify-content: space-between;
-        grid-template-columns: 20% 15% 20% 15%;
+        /* grid-template-columns: 20% 15% 20% 15%;
+         */
+         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
     }
 
@@ -419,17 +436,20 @@ table {
 }
 
 th {
-    background-color: var(--fondo);
-    color: white;
+    background: rgb(246, 255, 192);
+    color:white;
     font-weight: 500;
-    
+    border-radius: 15px;
+    border: none;
 }
 
 th,
 td {
-    
-    border: 1px solid rgb(255, 249, 196);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
     padding: 8px;
+    text-align: center;
+    border-radius: 15px;
 }
 
 table caption {
@@ -460,13 +480,20 @@ table caption {
 
     .container form .boton button {
         width: 100%;
+
     }
 
 
     .container .coment-pt1 {
+        margin: auto;
+        background-color: var(--fondo);
+        padding-top: 5px;  
+        color: rgb(255, 255, 255);       
         width: 100%;
-        font-size: 1.2rem;
+        height: .2rem;
+        font-size: .1rem;
         padding: 0;
+        width: 70%;      
     }
 
     .container form label {

@@ -1,9 +1,5 @@
 
-
-//activar el input edad del conyuge si se selecciona la opcion de casado
-
-// const { constrainedMemory } = require("process");
-
+//funcion que se usa para habilitar la edad del conyuge  si es que el usuario esta casado
 function habilitarInput() {
   var combo = document.getElementById("estadoC");
   var input = document.getElementById("edadCon");
@@ -17,6 +13,25 @@ function habilitarInput() {
     input.hidden = true;
     label.hidden = true
 
+  }
+}
+
+
+function habilitarInputIMSS() {
+  var combo = document.getElementById("montoIMSS");
+  var input = document.getElementById("saldoIMSS");
+  var label = document.getElementById("lb-montoIMSS");
+  // var msg = document.getElementsByClassName("msg-montoIMSS");
+  if (combo.value === "1") {
+
+    input.hidden = false;
+    label.hidden = false
+    msg.hidden = false
+  } else {
+
+    input.hidden = true;
+    label.hidden = true
+    msg.hidden=true
   }
 }
 
@@ -85,8 +100,6 @@ function createTable(jsonData) {
   tableContainer.appendChild(table);
 }
 
-
-
 var semanasCotizadas;
 
 
@@ -132,25 +145,57 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
 
   console.log(data);
 
-  // semanasCotizadas=semanasCot;
-  // document.getElementById("sc").textContent = params.get("semanasCot");
 
   // Enviar el JSON al servidor
 
   const url = "http://192.168.1.235:8574/sntssrv.dll/api/rest/tsm/prueba";
-
   const encoded = encodeURI(url);
   
   axios.get(url)
   .then(response => {
     const data = response.data; // JSON recibido desde la API
+    var jsonResultados = JSON.stringify(data);
+    // console.log("esta es la informacion que esta procesada",data);
+
+   
+
+    var resultados = JSON.parse(jsonResultados);
+
+
+    console.log(resultados);
+    // Obtener la referencia a la tabla
+    var tabla = document.getElementById('resultados-t');
+  
+    // Recorrer los resultados y agregarlos a la tabla
+    for (var clave in resultados) {
+      if (resultados.hasOwnProperty(clave)) {
+        var resultado = resultados[clave];
+        var fila = document.createElement('tr');
     
-    console.log("Anio",data);
-    // Aquí puedes almacenar los datos en el estado de tu componente React o en una variable global
-    // para usarlos posteriormente en la tabla de visualización.
-    // createTable
+        var celdaNombre = document.createElement('td');
+        celdaNombre.textContent = resultado.Anio;
+        fila.appendChild(celdaNombre);
+    
+        var celdaEdad = document.createElement('td');
+        celdaEdad.textContent = resultado.Edad;
+        fila.appendChild(celdaEdad);
+    
+        var celdaEmail = document.createElement('td');
+        celdaEmail.textContent = resultado.PenGarIMSS;
+        fila.appendChild(celdaEmail);
+    
+        tabla.appendChild(fila);
+      }
+    }
+    
+   
   })
+
+
   .catch(error =>  {
+
     console.error('Error en la solicitud:', error);
+    
   });
+
 });

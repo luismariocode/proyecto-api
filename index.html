@@ -21,9 +21,10 @@
 
     <div class="header-cont">
       <div class="img">
-        <img src="assets/logoheader.svg" alt="logo de la compañia">
+        <img src="assets/logo_2-removebg-preview.png" alt="logo de la compañia">
+        <!-- <p>SINDICATO NACIONAL DE TRABAJADORES DEL SEGURO SOLCIAL</p> -->
       </div>
-      <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS <br> y RJP</a></div>
+      <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS  y RJP</a></div>
   
     </div>
     
@@ -37,7 +38,7 @@
 
       <form id="myForm">
         <div class="sub-titulo">  
-          <p><span>*</span>PARA PODER REALIZAR LA PROYECCION DE TU JUBILACION NECESITO QUE ME AYUDES COMPLETANDO LA SIGUIENTE INFORMACION:</p>
+          <p>PARA PODER REALIZAR LA PROYECCION DE TU JUBILACION NECESITO QUE ME AYUDES COMPLETANDO LA SIGUIENTE INFORMACION:</p>
         </div>
           <div class="coment-pt1">
          
@@ -48,7 +49,7 @@
           <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
           <input type="text" id="semanasCot" name="semansCot" >
 
-          <label for="fechaIng">Fecha ingreso al RJP:</label>
+          <label for="fechaIng">Fecha de afiliacion al SNTSS:</label>
           <input type="date" id="fechaIng" name="fechaIng">
 
 
@@ -57,19 +58,19 @@
 
           <label for="sexo">Genero:</label>
           <select id="sexo">
-            <option value="M">Hombre</option>
-            <option value="F">Mujer</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
           </select>
 
           <label for="estadoC">Estado civil:</label>
           <select id="estadoC" onchange="habilitarInput()">
             <option value="soltero">Soltero/a</option>
             <option value="casado">Casado/a</option>
-            <option value="viudo">Viudo/a</option>
-            <option value="divorciado">Divorciado/a</option>
+            <!-- <option value="viudo">Viudo/a</option>
+            <option value="divorciado">Divorciado/a</option> -->
           </select>
 
-
+          
 
           <!-- edadCon = edad del conyuge -->
           <label id="lbl-estadoC" for="edadCon" hidden>Edad del conyuge:</label>
@@ -87,63 +88,79 @@
           <input type="number" step="any" id="sueldoCot" placeholder="$">
 
           <div id="msj-info">
-            <p> <span>*</span> sueldo mensual sobre el cual trabajador y patron aportaran a la cuenta individual del afiliado</p>
+            <p>  Sueldo quincenal sobre el cual se calculan las cuotas y   aportaciones al IMSS</p>
           </div>
 
-          <label for="saldoIMSS">Saldo cuenta individual IMSS:</label>
-          <input type="number" step="any" id="saldoIMSS" placeholder="$" >
-          <div id="msj-info">
-            <p> <span>*</span> monto acumulado en la cuenta individual </p>
+
+          <!-- /pregunta imss -->
+          <label for="montoIMSS">Monto de la cuenta individual en el  IMSS institucional </label>
+          <select id="montoIMSS" onchange="habilitarInputIMSS()">
+            <option value="1">Si lo conozco</option>
+            <option value="0">No lo conozco, Estimarlo</option>
+            <!-- <option value="viudo">Viudo/a</option>
+            <option value="divorciado">Divorciado/a</option> -->
+          </select>
+
+
+          <!-- <label for="saldoIMSS" id="lb-montoIMSS" hidden>Saldo cuenta individual IMSS:</label> -->
+          <input type="number" step="any" id="saldoIMSS" placeholder="Monto $" >
+
+          <!-- <div id="msj-info" class="msg-montoIMSS" >
+            <p> <span>*</span> Monto actual acumulado en la cuenta individual  en el IMSS Asegurador</p>
           </div>
-          <p id="text-checkbox">No conozco mi saldo individual IMSS</p>
-          <div class="radio">
-            <input id="estimarIMSS" type="checkbox" name="opcion"  onclick="checkBoxClicked()">*
-          </div>
-          <div id="msj-info">
-            <p> <span>*</span> En caso de que no conozcas tu saldo individal del IMSS se realizara una estimacion para poder realizar los calculos</p>
-          </div>
+           -->
+          <!-- pregunta RJP -->
+             <!-- /pregunta imss -->
+             <label for="montoIMSS">Monto de la cuenta individual del convenio laboral (15%) </label>
+             <select id="montoIMSS" onchange="habilitarInputIMSS()">
+               <option value="1">Si lo conozco</option>
+               <option value="0">No lo conozco, Estimarlo</option>
+               <!-- <option value="viudo">Viudo/a</option>
+               <option value="divorciado">Divorciado/a</option> -->
+             </select>
+
+             
+
           
-          <label for="saldoRJP">Saldo cuenta individual RJP:</label>
-          <input type="number" step="any" id="saldoRJP" placeholder="$" >
-          <div id="msj-info">
-            <p> <span>*</span> monto acumulado en la cuenta individual </p>
-          </div>
-          <p id="text-checkbox">No conozco mi saldo individual RJP</p>
-          <div class="radio">
-            <input id="estimarRJP" type="checkbox" name="opcion" onclick="checkBoxClicked()" >*
-          </div>
-          <div id="msj-info">
-            <p> <span>*</span> En caso de que no conozcas tu saldo individal del RJP se realizara una estimacion para poder realizar los calculos</p>
-          </div>
+          <!-- <label for="saldoRJP">Saldo cuenta individual RJP:</label> -->
+          <input type="number" step="any" id="saldoRJP" placeholder="Monto $" >
+          <!-- <div id="msj-info" class="msg-montoIMSS">
+            <p> <span>*</span> Monto actual acumulado en la cuenta individual </p>
+          </div> -->
+    
+          
         </div>
         <div class="coment-pt1">
          
         </div>
 
         <div class="pt3">
-          <label for="comboInf">¿Has Usado o Piensas Utilizar el INFONAVIT?</label>
+          <label for="comboInf">¿Has usado o piensas utilizar el INFONAVIT?</label>
           <select id="comboInf">
             <option value="Si">Si</option>
             <option value="No">No</option>
           </select>
-          <div id="msj-info">
-            <p> <span>*</span> La tasa de rendimiento anual esperada es ....</p>
-          </div>
+          <div>
 
-          <label for="comboTasa">Tasa de Rendimiento Anual Esperado Por Ariba de la Inflaccion</label>
+          </div>
+          <!-- <div id="msj-info">
+            <p> <span></span> </p>
+          </div> -->
+
+          <label for="comboTasa">Tasa de rendimiento anual esperado por arriba de la Inflaccion</label>
           <select id="comboTasa">
             <option value="2%">2%</option>
             <option value="3%">3%</option>
             <option value="4%">4%</option>
           </select>
           <div id="msj-info">
-            <p> <span>*</span> es la tasa de rendimiento anual que se supondria la cuenta individual obtenga en promedio  a lo largo del periodo de cotizacion 
+            <p> Es la tasa de interes anual que se supone que ganara en promedio la cuenta individual a lo largo del periodo de acumulacion y de desacumulacion.
             </p>
           </div>
 
         </div>
         <div class="msj">
-          <p><span>*</span>RECUERDA QUE ESTE ES UN SIMULADOR POR LO CUAL LOS RESULTADOS QUE SE ARROJEN SON <B>APROXIMACIONES</B></p>
+          <p>RECUERDA QUE ESTE ES UN SIMULADOR POR LO CUAL LOS RESULTADOS PUEDEN VARIAR SIGNIFICATIVAMENTE , PUES DEPENDEN DE QUE SE CUMPLAN   LOS SUPUESTOS BIOMETRICOS Y FINANCIEROS UTILIZADOS </p>
         </div>
         
         <div class="boton">

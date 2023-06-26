@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="import" href="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js">
-    
-    <script src="js/script.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
         .resultados-ocultos {
             display: none;
@@ -29,14 +29,15 @@
 
     <header>
 
-
         <div class="header-cont">
             <div class="img">
-                <img src="assets/logoheader.svg" alt="logo de la compañia">
+              <img src="assets/logo_2-removebg-preview.png" alt="logo de la compañia">
+              <!-- <p>SINDICATO NACIONAL DE TRABAJADORES DEL SEGURO SOLCIAL</p> -->
             </div>
-            <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS <br> y RJP</a></div>
-
-        </div>
+            <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS  y RJP</a></div>
+        
+          </div>
+          
 
     </header>
 
@@ -56,11 +57,7 @@
                 </p>
 
             </div>
-            <h3>Total</h3>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit
-                asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem,
-                placeat minus sed nihil!
-            </p>
+           
             <br><br>
             <h3>IMSS</h3>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nihil atque optio tempore, cumque
@@ -68,29 +65,34 @@
                 eligendi vitae commodi.
             </p>
             <br>
-            <h3>RJP</h3>
+            <h3>CONVENIO LABORAL</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime, similique quis asperiores
                 reiciendis, fugiat praesentium assumenda inventore, iste ad nam nisi minus totam velit. Quisquam quis
                 labore laboriosam maxime.</p>
+
+                <h3>Total</h3>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit
+                    asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem,
+                    placeat minus sed nihil!
+                </p>
         </div>
 
 
         <div class="result-pro-titulo">
             <H1 id="result-pro-h1">Resultados de tu Proyeccion</H1>
         </div>
+       
 
         <div class="total-resultados">
-
-            <p>Semanas cotizadas ante el IMSS</p>
-            <p id="nss">-</p>
-            <p>Sueldo cotizacion</p>
+            <!-- <div class="msj-result-pension">
+                <p>Tu pension a los </p> 
+    
+            </div> -->
+            <p>Tu pension a los</p>          
+            <p>Pension</p>         
+            <p>Porcentaje al ultimo salrio de cotizacion</p>
+            <p>-</p>
             <p>$</p>
-            <p>Saldo Cuenta individual</p>
-            <p>$</p>
-            <p>Pension por renta</p>
-            <p>$</p>
-
-            <p>Pension minima</p>
             <p>$</p>
         </div>
 
@@ -98,24 +100,38 @@
         <div class="nav-bar">
             <button onclick="mostrarResultado('resultado1')">TOTAL ></button>
             <button onclick="mostrarResultado('resultado2')">IMSS ></button>
-            <button onclick="mostrarResultado('resultado3')">RJP </button>
+            <button onclick="mostrarResultado('resultado3')">CONVENIO LABORAL SNTSS (15%) </button>
         </div>
 
-
+<!-- 
+        <table id="resultados-t">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Correo electrónico</th>
+                </tr>
+            </thead>
+            <tbody>
+                Las filas se agregarán aquí dinámicamente con JavaScript
+             </tbody>
+        </table> -->
 
 
         <div id="resultado1" class="resultado">
-            <table id="resultados-total">
+            <table id="resultados-t">
                 <thead>
                     <tr>
+                        <th>Año</th>
                         <th>Edad</th>
-                        <th>Antiguedad</th>
-                        <th>Sueldo </th>
+                        <!-- <th>Antiguedad</th> -->
+                        <th>Sueldo de Cotizacion</th>
                         <th>Saldo Total</th>
-                        <th>Renta Vitalicia IMSS</th>
-                        <th>Renta Vitalicia RJP</th>
-                           <!-- <th>Pension Garantizada IMSS</th> -->
-                        <th>Pension</th>
+                        <th>Pension del IMSS</th>
+                        <th>Pension del Convenio Laboral</th>
+                        <!-- <th>Pension Garantizada IMSS</th> -->
+                        <th>Pension Total</th>
+                        <th>Porcentaje del Salario de Cotizacion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,17 +141,19 @@
 
 
 
-        <div id="resultado2" class="resultado resultados-ocultos" >
-            <table id="resultados-total">
+        <div id="resultado2" class="resultado resultados-ocultos">
+            <table id="resultados-imss">
                 <thead>
                     <tr>
+                        <th>Año</th>
                         <th>Edad</th>
-                        <th>Antiguedad</th>
-                        <th>Sueldo</th>
-                        <th>Saldo IMSS</th>
+                        <!-- <th>Antiguedad</th> -->
+                        <th>Sueldo de Cotizacion</th>
+                        <th>Saldo de la Cuenta Individual</th>
                         <th>Renta Vitalicia IMSS</th>
                         <th>Pension Garantizada IMSS</th>
                         <th>Pension IMSS</th>
+                        <th>Porcentaje del Salario de Cotizacion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -146,16 +164,17 @@
 
 
         <div id="resultado3" class="resultado resultados-ocultos">
-            <table id="resultados-total">
+            <table id="resultados-rjp">
                 <thead>
                     <tr>
+                        <th>Año</th>
                         <th>Edad</th>
-                        <th>Antiguedad</th>
-                        <th>Sueldo</th>
-                        <th>Saldo RJP</th>
-                        <th>Renta Vitalicia RJP</th>
-                        <th>Pension Garantizada RJP</th>
-                        <th>Pension RJP</th>
+                        <!-- <th>Antiguedad</th> -->
+                        <th>Sueldo de Cotizacion  </th>
+                        <th>Saldo de la Subcuenta Adiccional</th>
+                        <th>Monto de Pension</th>
+                       
+                        <th>Porcentaje del Salario de Cotizacion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -167,10 +186,209 @@
 
 
         <div class="boton">
-            <button>GENERAR<span></span></button>
+            <button>Descargar<span></span></button>
         </div>
 
     </div>
+
+
+    <script>
+
+        const url = "http://192.168.1.235:8574/sntssrv.dll/api/rest/tsm/prueba";
+        // const encoded = encodeURI(url);
+
+        axios.get(url)
+            .then(response => {
+                const data = response.data; // JSON recibido desde la API
+                const headers = response.headers; 
+                console.log("header",headers);
+
+                
+                var jsonResultados = JSON.stringify(data);
+
+
+                const datosTabulados = jsonResultados.slice(43,-1);
+                // console.log("esta es la informacion que esta procesada",data);
+                console.log(datosTabulados);
+
+            
+
+                var resultados = JSON.parse(datosTabulados);
+
+                var tabla = document.getElementById('resultados-t');
+                // console.log(resultados);
+                // Obtener la referencia a la tabla
+                for (var clave in resultados) {
+                   
+                    if (resultados.hasOwnProperty(clave)) {
+                        var resultado = resultados[clave];
+                        var fila = document.createElement('tr');
+
+                        var celdaNombre = document.createElement('td');
+                        celdaNombre.textContent = resultado.Anio;
+                        fila.appendChild(celdaNombre);
+
+
+                        var celdaNombre = document.createElement('td');
+                        celdaNombre.textContent = resultado.Edad;
+                        fila.appendChild(celdaNombre);
+
+                        // var celdaEdad = document.createElement('td');
+                        // celdaEdad.textContent = resultado.Antiguedad;
+                        // fila.appendChild(celdaEdad);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.Sueldo;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.SaldoTotal;
+                        fila.appendChild(celdaEdad);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.RtaVitIMSS;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.RtaVitRJP;
+                        fila.appendChild(celdaEdad);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.Pension;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.pjeTotal;
+                        fila.appendChild(celdaEmail);
+
+                        tabla.appendChild(fila);
+                    }
+                }
+
+                var tabla_dos = document.getElementById('resultados-imss');
+                // console.log(resultados);
+                // Obtener la referencia a la tabla
+                for (var clave in resultados) {
+                    
+                    if (resultados.hasOwnProperty(clave)) {
+                        var resultado = resultados[clave];
+                        var fila = document.createElement('tr');
+
+                        var celdaNombre = document.createElement('td');
+                        celdaNombre.textContent = resultado.Anio;
+                        fila.appendChild(celdaNombre);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.Edad;
+                        fila.appendChild(celdaEdad);
+
+                        // var celdaEmail = document.createElement('td');
+                        // celdaEmail.textContent = resultado.Antiguedad;
+                        // fila.appendChild(celdaEmail);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.Sueldo;
+                        fila.appendChild(celdaEdad);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.SaldoIMSS;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.RtaVitIMSS;
+                        fila.appendChild(celdaEdad);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.PenGarIMSS;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.PensionIMSS;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.pjeIMSS;
+                        fila.appendChild(celdaEmail);
+
+
+
+
+                        tabla_dos.appendChild(fila);
+                    }
+                }
+
+
+
+                //tabular los datos del RJP
+
+                //******************************
+                var tabla_dos = document.getElementById('resultados-rjp');
+                // console.log(resultados);
+                // Obtener la referencia a la tabla
+                for (var clave in resultados) {
+                    
+                    if (resultados.hasOwnProperty(clave)) {
+                        var resultado = resultados[clave];
+                        var fila = document.createElement('tr');
+
+                        var celdaNombre = document.createElement('td');
+                        celdaNombre.textContent = resultado.Anio;
+                        fila.appendChild(celdaNombre);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.Edad;
+                        fila.appendChild(celdaEdad);
+
+                        // var celdaEmail = document.createElement('td');
+                        // celdaEmail.textContent = resultado.Antiguedad;
+                        // fila.appendChild(celdaEmail);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.Sueldo;
+                        fila.appendChild(celdaEdad);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.SaldoRJP;
+                        fila.appendChild(celdaEmail);
+
+                        var celdaEdad = document.createElement('td');
+                        celdaEdad.textContent = resultado.RtaVitRJP;
+                        fila.appendChild(celdaEdad);
+
+                        // var celdaEmail = document.createElement('td');
+                        // celdaEmail.textContent = resultado.PenGarRJP;
+                        // fila.appendChild(celdaEmail);
+
+                        // var celdaEmail = document.createElement('td');
+                        // celdaEmail.textContent = resultado.PensionRJP;
+                        // fila.appendChild(celdaEmail);
+
+                        var celdaEmail = document.createElement('td');
+                        celdaEmail.textContent = resultado.pjeRJP;
+                        fila.appendChild(celdaEmail);
+
+
+
+
+                        tabla_dos.appendChild(fila);
+                    }
+                }
+
+                // Aquí puedes almacenar los datos en el estado de tu componente React o en una variable global
+                // para usarlos posteriormente en la tabla de visualización.
+                // createTable
+            })
+
+
+            .catch(error => {
+
+                console.error('Error en la solicitud:', error);
+
+            });
+    </script>
+
+
+<script src="js/script.js"></script>
 </body>
 
 </html>
