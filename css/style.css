@@ -10,7 +10,8 @@
 }
 
 html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 62.5%;
 }
 
@@ -18,130 +19,130 @@ body {
     font-size: 1.5rem;
 }
 
+
+/* estilos del header */
 header {
     width: 100%;
-    height: 120px;
-    background-color: var(--fondo);
-    min-width: 340px;
+    height: 300px;
+    /* background-color: #ffffff; */
+    display: grid;
+    grid-template-rows: 35% 65%;
 }
-
-
-header .img img{
-    width: 300px;
-    margin: 0;
-    padding: 0;
-}
-header .img{
-    padding-bottom: 10px;
-}
-
-header .header-cont {
-    width: 70%;
-    margin: 0 auto;
+header .header-titulo{
+    width: 70% ;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
-    padding: 15px 25px;
-}
-header .inst {
-    padding-top: 20px;
-}
-header .inst a {
-    font-size: 2.5rem;
+    justify-content: end;
+    padding: 35px;
     color: white;
-    text-decoration: none;
-    padding-top:70px ;
+    font-size: 1.5rem;
 }
 
+header .header-img-container{
+    width: 100%;
+    background: linear-gradient(0deg, #cecbcb 0%, rgba(255, 255, 255, 0) 50%);
+    box-shadow: 2px 0px 7px rgba(55, 55, 56, 0.897);
+}
+
+header .header-img-container--img{
+    width: 60%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: start;
+    
+}
+
+header .header-img-container--img img{
+    width: 200px;
+    margin: 0 25px;
+    
+}
+header .header-img-container--img h1{
+    font-size: 3.3rem;
+    padding-left: 15px;
+    padding-top: 60px;
+    font-weight: 700;
+    line-height: normal;
+    color: #1b1b1b;
+}
+
+/* temrino de los estilos del header */
+main{
+    background-color: #f7f7f7;
+}
 
 .container {
     width: 100%;
     min-width: 340px;
     margin: 0 auto;
-    padding: 25px;
-}
-
-.container::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-
-
-.container  h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin: 25px;
-    font-weight: 500;
-    padding-bottom: 15px;
-    /* border-bottom: 2px solid var(--fondo); */
+    
 }
 
 .container .sub-titulo {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+
+.container .pt1,.pt2,.pt3{
     width: 70%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow:  0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin-bottom: 45px;
+    padding: 50px 25px;
+}
+
+.container .pt1 .pt1-formulario{
+    width: 80%;
     margin: 25px auto;
-    text-align: center;
+    height: 100%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
 }
 
-.container .sub-titulo span {
-    color: red;
-    font-size: 1.5rem;
+.container .pt2 .pt2-formulario{
+    width: 80%;
+    margin: 25px auto;
+    height: 100%;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
-
-.container .pt1,
-.container .pt2,
-.container .pt3 {
-    width: 70%;
-    height: auto;
-    margin: auto;
-    min-width: 320px;
-    display: grid;
-    grid-template-columns: 15% 25% 15% 25%;
-    justify-content: center;
-    grid-gap: 10px;
-    
-    padding-bottom: 35px;
-    padding-top: 35px;
-    color: rgb(0, 3, 0);
-
+.container .pt3 .pt3-formulario{
+    width: 80%;
+    margin: 25px auto;
+    height: 100%;
+    display:grid;
+    grid-template-columns: 30% 20% 30% 20%;
+    flex-direction: column;
 }
 
-.container .pt2 {
-    display: grid;
-    grid-template-columns: 20% 20% 30%;
-}
-
-.container .pt3 {
-    display: grid;
-    grid-template-columns: 30% 10% 30%;
-}
-
-
-.container .coment-pt1 {
-    margin: auto;
-    background-color: var(--fondo);
-    padding-top: 5px;  
-    color: rgb(255, 255, 255);       
-    width: 100%;
-    height: .2rem;
-    font-size: .1rem;
-    padding: 0;
-    width: 70%;      
-}
-
-.container form label {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    justify-self: center;
-    text-align: center;
+.container .pt1 label,
+.container .pt2 label,
+.container .pt3 label{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 55px;
+    text-align: start;
+    font-size: 1.6rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
 }
 
 .container form input,
 .container form select,
 .container form input[type="date"],
 .container form input[type="number"] {
-    width: 100%;
+
+    width: 90%;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid #cecece;
     font-size: 1.5rem;
     align-self: center;
@@ -149,38 +150,46 @@ header .inst a {
 }
 
 
-.container form #info_tasa {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-image: url('/assets/info.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-left: 15px;
-
-}
 
 
-.radio {
-    display: flex;
+.container form label {
     font-size: 1.5rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.radio input[type="checkbox"] {
-    width: 1.8rem;
-    margin-right: 15px;
-}
-
-#text-checkbox {
-    margin: 15px 0px;
+    margin: 15px 0;
+    justify-self: start ;
     text-align: center;
 }
 
-.radio p {
-    margin-right: 25px;
+.container #msj-info {
+    width: 90%;
+    color: #92430e;
+    background-color: #fff4c3;
+}
+
+.container .pt3 .msj-pt3{
+   margin-top: 25px;
+    grid-column: span 5;
+}
+
+.container .msj-final{
+    width: 70%;
+    margin: auto;
+    background-color: rgb(196, 248, 255);
+    border-top: 1;
+}
+
+.container .flex{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+.container .flex .py-1 svg{
+    width: 90;
+}
+.container .msj-final p{
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
 
@@ -225,24 +234,9 @@ header .inst a {
    grid-column-start: span 3;
 
 }
-.container #msj-info {
-    background-color: #fff9e0;
-    padding: 10PX;
-    font-size: 1.2rem;
-    border-radius: 5px;
-}
 
-.container #msj-info span{
-    color: red;
 
-}
-.container .msj {
-    width: 70%;
-    margin: auto;
-    text-align: center;
-    padding-top: 15px;
 
-}
 
 
 
@@ -374,24 +368,29 @@ footer a {
     margin: 50px auto 20px auto;
     display: flex;
     justify-content: center;
-
+    padding: 5px;
+    background-color: #ffffff;
+    width: 70%;
 }
 
 .nav-bar button {
      /* margin-left: 35px; */
-    border-right: 5px solid gray;
+
     font-size: 1.5rem;
     padding: 20px 15px;
     text-decoration: none;
-    background-color: #ffffff;
+    
     color: var(--fondo);
     cursor: pointer;
-    border: none;
+   
+    background-color: #fffd8b;
+    border-radius: 15px;
+    margin-left: 15px;
 }
 
 .nav-bar button:hover,
 .nav-bar button:focus {
-    text-decoration: underline;
+    background-color: #969693;
     
 }
 
@@ -471,6 +470,7 @@ table caption {
         justify-content: space-between;
         padding: 15px 25px;
     }
+    .
 
     .container .pt1,
     .container .pt2,
@@ -551,6 +551,11 @@ table caption {
      
     }
 
+/* nuevos estilos ----------------------------- */
+    header .header-img-container--img h1{
+        padding-top: 25px;
+        font-size: 3rem;
+    }
 
 
 }

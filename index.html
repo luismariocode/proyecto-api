@@ -7,9 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+
+  <!-- <link rel="stylesheet" href="css/tailwind.css"> -->
 
   <title>Calculo pensiones</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
@@ -18,153 +25,149 @@
 <body>
   <header>
 
-
-    <div class="header-cont">
-      <div class="img">
-        <img src="assets/logo_2-removebg-preview.png" alt="logo de la compañia">
-        <!-- <p>SINDICATO NACIONAL DE TRABAJADORES DEL SEGURO SOLCIAL</p> -->
+    <nav class="bg-green-900">
+      <div class="header-titulo  w-full bg-green-900">
+        <h3>IMSS</h3>
       </div>
-      <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS  y RJP</a></div>
-  
-    </div>
-    
-  </header>
-  <main>
-    <div class="container">
+    </nav>
 
-      <div class="sub-titulo"><h1>PROYECCIÓN APROXIMADA DE TU JUBILACIÓN</h1></div>
-      
+
+
+    <div class="header-img-container">
+      <div class="header-img-container--img  ">
+
+        <img src="assets/logo-sntte.svg" alt="logo de la compañia">
+        <h1 class="text-5x1">Proyección aproximada de tu jubilación</h1>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+
+    <div class="container">
+      <div class="sub-titulo ">
+        <p>PARA PODER REALIZAR LA PROYECCION DE TU JUBILACION NECESITO QUE ME AYUDES COMPLETANDO LA SIGUIENTE
+          INFORMACION:</p>
+      </div>
 
 
       <form id="myForm">
-        <div class="sub-titulo">  
-          <p>PARA PODER REALIZAR LA PROYECCION DE TU JUBILACION NECESITO QUE ME AYUDES COMPLETANDO LA SIGUIENTE INFORMACION:</p>
-        </div>
-          <div class="coment-pt1">
-         
-        </div>
 
-        <div class="pt1">
-
-          <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
-          <input type="text" id="semanasCot" name="semansCot" >
-
-          <label for="fechaIng">Fecha de afiliacion al SNTSS:</label>
-          <input type="date" id="fechaIng" name="fechaIng">
+        <div class="pt1 ">
+          <div class="pt1-formulario">
 
 
-          <label for="edadActual">Edad Actual</label>
-          <input type="number" id="edadActual" name="edadActual">
-
-          <label for="sexo">Genero:</label>
-          <select id="sexo">
-            <option value="M">Masculino</option>
-            <option value="F">Femenino</option>
-          </select>
-
-          <label for="estadoC">Estado civil:</label>
-          <select id="estadoC" onchange="habilitarInput()">
-            <option value="soltero">Soltero/a</option>
-            <option value="casado">Casado/a</option>
-            <!-- <option value="viudo">Viudo/a</option>
-            <option value="divorciado">Divorciado/a</option> -->
-          </select>
-
-          
-
-          <!-- edadCon = edad del conyuge -->
-          <label id="lbl-estadoC" for="edadCon" hidden>Edad del conyuge:</label>
-          <input type="number" id="edadCon" hidden>
+            <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
+            <label for="fechaIng">Fecha de afiliacion al SNTSS:</label>
+            <input type="text" id="semanasCot" name="semansCot">
+            <input type="date" id="fechaIng" name="fechaIng">
 
 
+            <label for="edadActual">Edad Actual</label>
+            <label for="sexo">Genero:</label>
+            <input type="number" id="edadActual" name="edadActual">
+
+
+            <select id="sexo">
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+
+            <label for="estadoC">Estado civil:</label>
+            <label id="lbl-estadoC" for="edadCon">Edad del conyuge:</label>
+            <select id="estadoC" onchange="habilitarInput()">
+              <option value="soltero">Soltero/a</option>
+              <option value="casado">Casado/a</option>
+
+            </select>
+
+            <input type="number" id="edadCon" disable>
+          </div>
         </div>
 
-        <div class="coment-pt1">
 
-        </div>
         <div class="pt2">
+          <div class="pt2-formulario">
+            <label for="sueldoCot">Sueldo de cotizacion :</label>
 
-          <label for="sueldoCot">Sueldo de cotizacion :</label>
-          <input type="number" step="any" id="sueldoCot" placeholder="$">
+            <input type="number" step="any" id="sueldoCot" placeholder="$">
 
-          <div id="msj-info">
-            <p>  Sueldo quincenal sobre el cual se calculan las cuotas y   aportaciones al IMSS</p>
+            <div id="msj-info" class="border-l-4 border-orange-500 text-orange-700 p-4 w-auto">
+              <p> Sueldo quincenal sobre el cual se calculan las cuotas y aportaciones al IMSS</p>
+            </div>
+
+
+
+            <label for="montoIMSS">Monto de la cuenta individual en el IMSS institucional </label>
+            <select id="montoIMSS" onchange="habilitarInputIMSS()">
+              <option value="1">Si lo conozco</option>
+              <option value="0">No lo conozco, Estimarlo</option>
+
+            </select>
+
+
+
+            <input type="number" step="any" id="saldoIMSS" placeholder="Monto $">
+
+
+            <label for="montoIMSS">Monto de la cuenta individual del convenio laboral (15%) </label>
+            <select id="montoIMSS" onchange="habilitarInputIMSS()">
+              <option value="1">Si lo conozco</option>
+              <option value="0">No lo conozco, Estimarlo</option>
+            </select>
+
+            <input type="number" step="any" id="saldoRJP" placeholder="Monto $">
+
           </div>
 
 
-          <!-- /pregunta imss -->
-          <label for="montoIMSS">Monto de la cuenta individual en el  IMSS institucional </label>
-          <select id="montoIMSS" onchange="habilitarInputIMSS()">
-            <option value="1">Si lo conozco</option>
-            <option value="0">No lo conozco, Estimarlo</option>
-            <!-- <option value="viudo">Viudo/a</option>
-            <option value="divorciado">Divorciado/a</option> -->
-          </select>
 
-
-          <!-- <label for="saldoIMSS" id="lb-montoIMSS" hidden>Saldo cuenta individual IMSS:</label> -->
-          <input type="number" step="any" id="saldoIMSS" placeholder="Monto $" >
-
-          <!-- <div id="msj-info" class="msg-montoIMSS" >
-            <p> <span>*</span> Monto actual acumulado en la cuenta individual  en el IMSS Asegurador</p>
-          </div>
-           -->
-          <!-- pregunta RJP -->
-             <!-- /pregunta imss -->
-             <label for="montoIMSS">Monto de la cuenta individual del convenio laboral (15%) </label>
-             <select id="montoIMSS" onchange="habilitarInputIMSS()">
-               <option value="1">Si lo conozco</option>
-               <option value="0">No lo conozco, Estimarlo</option>
-               <!-- <option value="viudo">Viudo/a</option>
-               <option value="divorciado">Divorciado/a</option> -->
-             </select>
-
-             
-
-          
-          <!-- <label for="saldoRJP">Saldo cuenta individual RJP:</label> -->
-          <input type="number" step="any" id="saldoRJP" placeholder="Monto $" >
-          <!-- <div id="msj-info" class="msg-montoIMSS">
-            <p> <span>*</span> Monto actual acumulado en la cuenta individual </p>
-          </div> -->
-    
-          
         </div>
-        <div class="coment-pt1">
-         
-        </div>
+
+
 
         <div class="pt3">
-          <label for="comboInf">¿Has usado o piensas utilizar el INFONAVIT?</label>
-          <select id="comboInf">
-            <option value="Si">Si</option>
-            <option value="No">No</option>
-          </select>
-          <div>
-
+          <div class="pt3-formulario">
+            <label for="comboInf">¿Has usado o piensas utilizar el INFONAVIT?</label>
+            <select id="comboInf">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          
+            <label for="comboTasa">Tasa de rendimiento anual esperado por arriba de la Inflaccion</label>
+            <select id="comboTasa">
+              <option value="2%">2%</option>
+              <option value="3%">3%</option>
+              <option value="4%">4%</option>
+            </select>
+            <div id="msj-info" class="border-l-4 border-orange-500 text-orange-700 p-4 w-auto msj-pt3" >
+              <p> Es la tasa de interes anual que se supone que ganara en promedio la cuenta individual a lo largo del
+                periodo de acumulacion y de desacumulacion.
+              </p>
           </div>
-          <!-- <div id="msj-info">
-            <p> <span></span> </p>
-          </div> -->
-
-          <label for="comboTasa">Tasa de rendimiento anual esperado por arriba de la Inflaccion</label>
-          <select id="comboTasa">
-            <option value="2%">2%</option>
-            <option value="3%">3%</option>
-            <option value="4%">4%</option>
-          </select>
-          <div id="msj-info">
-            <p> Es la tasa de interes anual que se supone que ganara en promedio la cuenta individual a lo largo del periodo de acumulacion y de desacumulacion.
-            </p>
+         
           </div>
 
         </div>
-        <div class="msj">
-          <p>RECUERDA QUE ESTE ES UN SIMULADOR POR LO CUAL LOS RESULTADOS PUEDEN VARIAR SIGNIFICATIVAMENTE , PUES DEPENDEN DE QUE SE CUMPLAN   LOS SUPUESTOS BIOMETRICOS Y FINANCIEROS UTILIZADOS </p>
+
+        <div class="bg-teal-100 border-t-4 border-green-900 rounded-b text-teal-900 px-4 py-3 shadow-md msj-final p-5" role="alert">
+          <div class="flex">
+            <div class="py-1 "><svg class="fill-current h-10 w-10 text-green-900 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+            <div>
+              
+              <p class="text-sm text-green-900">Recuerda que este es un simulador por lo cual los resultados pueden variar significativamente, pues dependen de que se cumplan los supuestos biométricos y financieros utilizados</p>
+            </div>
+          </div>
         </div>
+
+     
+
         
+
         <div class="boton">
-          <button type="submit">Realizar Calculo <span id="btn-icon"></span></button>
+          <button type="submit">Realizar Calculo <span class="arrow-narrow-right"></span></button>
         </div>
 
       </form>

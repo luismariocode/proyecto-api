@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="import" href="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
@@ -31,18 +33,18 @@
 
         <div class="header-cont">
             <div class="img">
-              <img src="assets/logo_2-removebg-preview.png" alt="logo de la compañia">
-              <!-- <p>SINDICATO NACIONAL DE TRABAJADORES DEL SEGURO SOLCIAL</p> -->
+                <img src="assets/logo_2-removebg-preview.png" alt="logo de la compañia">
+                <!-- <p>SINDICATO NACIONAL DE TRABAJADORES DEL SEGURO SOLCIAL</p> -->
             </div>
-            <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS  y RJP</a></div>
-        
-          </div>
-          
+            <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS y RJP</a></div>
+
+        </div>
+
 
     </header>
 
 
-    <div class="container">
+    <div class="container" id="container">
 
         <!-- 
             <div class="tabla-titulo">
@@ -57,7 +59,7 @@
                 </p>
 
             </div>
-           
+
             <br><br>
             <h3>IMSS</h3>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nihil atque optio tempore, cumque
@@ -70,26 +72,26 @@
                 reiciendis, fugiat praesentium assumenda inventore, iste ad nam nisi minus totam velit. Quisquam quis
                 labore laboriosam maxime.</p>
 
-                <h3>Total</h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit
-                    asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem,
-                    placeat minus sed nihil!
-                </p>
+            <h3>Total</h3>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit
+                asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem,
+                placeat minus sed nihil!
+            </p>
         </div>
 
 
         <div class="result-pro-titulo">
             <H1 id="result-pro-h1">Resultados de tu Proyeccion</H1>
         </div>
-       
+
 
         <div class="total-resultados">
             <!-- <div class="msj-result-pension">
                 <p>Tu pension a los </p> 
     
             </div> -->
-            <p>Tu pension a los</p>          
-            <p>Pension</p>         
+            <p>Tu pension a los</p>
+            <p>Pension</p>
             <p>Porcentaje al ultimo salrio de cotizacion</p>
             <p>-</p>
             <p>$</p>
@@ -97,13 +99,13 @@
         </div>
 
 
-        <div class="nav-bar">
-            <button onclick="mostrarResultado('resultado1')">TOTAL ></button>
-            <button onclick="mostrarResultado('resultado2')">IMSS ></button>
+        <div class="nav-bar" id="nav-bar">
+            <button onclick="mostrarResultado('resultado1')">TOTAL </button>
+            <button onclick="mostrarResultado('resultado2')">IMSS </button>
             <button onclick="mostrarResultado('resultado3')">CONVENIO LABORAL SNTSS (15%) </button>
         </div>
 
-<!-- 
+        <!-- 
         <table id="resultados-t">
             <thead>
                 <tr>
@@ -170,10 +172,10 @@
                         <th>Año</th>
                         <th>Edad</th>
                         <!-- <th>Antiguedad</th> -->
-                        <th>Sueldo de Cotizacion  </th>
+                        <th>Sueldo de Cotizacion </th>
                         <th>Saldo de la Subcuenta Adiccional</th>
                         <th>Monto de Pension</th>
-                       
+
                         <th>Porcentaje del Salario de Cotizacion</th>
                     </tr>
                 </thead>
@@ -186,7 +188,7 @@
 
 
         <div class="boton">
-            <button>Descargar<span></span></button>
+            <button onclick="generarPDF()">Descargar<span></span></button>
         </div>
 
     </div>
@@ -200,18 +202,18 @@
         axios.get(url)
             .then(response => {
                 const data = response.data; // JSON recibido desde la API
-                const headers = response.headers; 
-                console.log("header",headers);
+                const headers = response.headers;
+                console.log("header", headers);
 
-                
+
                 var jsonResultados = JSON.stringify(data);
 
 
-                const datosTabulados = jsonResultados.slice(43,-1);
+                const datosTabulados = jsonResultados.slice(43, -1);
                 // console.log("esta es la informacion que esta procesada",data);
                 console.log(datosTabulados);
 
-            
+
 
                 var resultados = JSON.parse(datosTabulados);
 
@@ -219,7 +221,7 @@
                 // console.log(resultados);
                 // Obtener la referencia a la tabla
                 for (var clave in resultados) {
-                   
+
                     if (resultados.hasOwnProperty(clave)) {
                         var resultado = resultados[clave];
                         var fila = document.createElement('tr');
@@ -231,11 +233,14 @@
 
                         var celdaNombre = document.createElement('td');
                         celdaNombre.textContent = resultado.Edad;
+
+
+                        if (resultado.Edad == 65) {
+                            celdaNombre.style.background = "green";
+                        }
+
                         fila.appendChild(celdaNombre);
 
-                        // var celdaEdad = document.createElement('td');
-                        // celdaEdad.textContent = resultado.Antiguedad;
-                        // fila.appendChild(celdaEdad);
 
                         var celdaEmail = document.createElement('td');
                         celdaEmail.textContent = resultado.Sueldo;
@@ -269,7 +274,7 @@
                 // console.log(resultados);
                 // Obtener la referencia a la tabla
                 for (var clave in resultados) {
-                    
+
                     if (resultados.hasOwnProperty(clave)) {
                         var resultado = resultados[clave];
                         var fila = document.createElement('tr');
@@ -282,9 +287,9 @@
                         celdaEdad.textContent = resultado.Edad;
                         fila.appendChild(celdaEdad);
 
-                        // var celdaEmail = document.createElement('td');
-                        // celdaEmail.textContent = resultado.Antiguedad;
-                        // fila.appendChild(celdaEmail);
+                        if (resultado.Edad == 65) {
+                            celdaEdad.style.background = "green";
+                        }
 
                         var celdaEdad = document.createElement('td');
                         celdaEdad.textContent = resultado.Sueldo;
@@ -326,7 +331,7 @@
                 // console.log(resultados);
                 // Obtener la referencia a la tabla
                 for (var clave in resultados) {
-                    
+
                     if (resultados.hasOwnProperty(clave)) {
                         var resultado = resultados[clave];
                         var fila = document.createElement('tr');
@@ -339,9 +344,10 @@
                         celdaEdad.textContent = resultado.Edad;
                         fila.appendChild(celdaEdad);
 
-                        // var celdaEmail = document.createElement('td');
-                        // celdaEmail.textContent = resultado.Antiguedad;
-                        // fila.appendChild(celdaEmail);
+                        if (resultado.Edad == 65) {
+                            celdaEdad.style.background = "yellow";
+                        }
+
 
                         var celdaEdad = document.createElement('td');
                         celdaEdad.textContent = resultado.Sueldo;
@@ -355,13 +361,7 @@
                         celdaEdad.textContent = resultado.RtaVitRJP;
                         fila.appendChild(celdaEdad);
 
-                        // var celdaEmail = document.createElement('td');
-                        // celdaEmail.textContent = resultado.PenGarRJP;
-                        // fila.appendChild(celdaEmail);
 
-                        // var celdaEmail = document.createElement('td');
-                        // celdaEmail.textContent = resultado.PensionRJP;
-                        // fila.appendChild(celdaEmail);
 
                         var celdaEmail = document.createElement('td');
                         celdaEmail.textContent = resultado.pjeRJP;
@@ -374,9 +374,7 @@
                     }
                 }
 
-                // Aquí puedes almacenar los datos en el estado de tu componente React o en una variable global
-                // para usarlos posteriormente en la tabla de visualización.
-                // createTable
+
             })
 
 
@@ -385,10 +383,52 @@
                 console.error('Error en la solicitud:', error);
 
             });
+
+
+
+
+        function generarPDF() {
+            // Obtener el contenido del div
+            var contenidoDiv = document.getElementById('container').innerHTML;
+
+            // Ocultar los botones dentro del div
+            var botones = document.getElementById('container').querySelectorAll('button');
+            for (var i = 0; i < botones.length; i++) {
+                botones[i].style.display = 'none';
+            }
+
+            // Crear un iframe oculto
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+            // Agregar el contenido del div al iframe
+            iframeDoc.body.innerHTML = contenidoDiv;
+
+            // Esperar a que el contenido se cargue completamente
+            setTimeout(function () {
+                // Imprimir el iframe
+                iframe.contentWindow.print();
+
+                // Restaurar la visualización de los botones
+                for (var i = 0; i < botones.length; i++) {
+                    botones[i].style.display = 'block';
+                }
+
+                // Eliminar el iframe
+                document.body.removeChild(iframe);
+            }, 1000);
+        }
+
+
+
+
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

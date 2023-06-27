@@ -3,17 +3,14 @@
 function habilitarInput() {
   var combo = document.getElementById("estadoC");
   var input = document.getElementById("edadCon");
-  var label = document.getElementById("lbl-estadoC");
-  if (combo.value === "casado") {
 
-    input.hidden = false;
-    label.hidden = false
+  if (combo.value === "casado") {
+      input.disable = false; 
   } else {
 
-    input.hidden = true;
-    label.hidden = true
-
+      input.disable = true;
   }
+  
 }
 
 
