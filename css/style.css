@@ -23,19 +23,26 @@ body {
 /* estilos del header */
 header {
     width: 100%;
+    min-width: 320px;
     height: 300px;
     /* background-color: #ffffff; */
     display: grid;
-    grid-template-rows: 35% 65%;
+    grid-template-rows: 30% 70%;
 }
-header .header-titulo{
-    width: 70% ;
+header nav .header-titulo{
+    width: 60% ;
+    height: 100%;
     margin: auto;
     display: flex;
     justify-content: end;
     padding: 35px;
     color: white;
     font-size: 1.5rem;
+ 
+}
+
+header nav .header-titulo h3{
+    font-size: 2rem;
 }
 
 header .header-img-container{
@@ -45,11 +52,12 @@ header .header-img-container{
 }
 
 header .header-img-container--img{
-    width: 60%;
+    width: 55%;
+    min-width: 320px;
     display: flex;
     margin: 0 auto;
     justify-content: start;
-    
+    padding: 10px ;
 }
 
 header .header-img-container--img img{
@@ -86,9 +94,14 @@ main{
     text-align: center;
 }
 
+.container .sub-titulo p{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    color: #525252;
+}
 
 .container .pt1,.pt2,.pt3{
-    width: 70%;
+    width: 75%;
     margin: 0 auto;
     background-color: white;
     box-shadow:  0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -102,7 +115,7 @@ main{
     margin: 25px auto;
     height: 100%;
     display:grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(4,1fr);
 }
 
 .container .pt2 .pt2-formulario{
@@ -118,8 +131,8 @@ main{
     margin: 25px auto;
     height: 100%;
     display:grid;
-    grid-template-columns: 30% 20% 30% 20%;
-    flex-direction: column;
+    grid-template-columns: repeat(4,1fr);
+ 
 }
 
 .container .pt1 label,
@@ -195,28 +208,28 @@ main{
 
 .container form .boton {
     width: 70%;
-    margin: auto;
+   
     display: flex;
-    justify-content: center;
-    padding-top: 25px;
-
+    justify-content: end;
+    
 }
 
-.container form button {
-    width: 30%;
-    margin: auto;
-    padding: 10px 0px;
-    border-radius: 15px;
+.container form .boton button {
+    font-size: 2rem;
     color: white;
-    background-color: var(--fondo);
-    font-size: 1.8rem;
+    width: 30%;
+    padding: 15px 0px;
+    border-radius: 5px;
+    background-color: #047857;
+    box-shadow: 0px 0px 7px rgba(1, 22, 6, 0.897);
+  
     cursor: pointer;
 
 }
 
 
 .container form button:hover {
-    background-color: #54a18e;
+    box-shadow: 2px 5px 7px rgba(1, 112, 29, 0.692);
 }
 
 
@@ -315,24 +328,6 @@ footer a {
     font-weight: 500;
 
 
-}
-.container .resultados-resumen{
-    width: 70%;
-    margin:auto;
-    text-align: center;
-    line-height: 2.5rem;
-    background-color: #f3f1e8;
-    padding-bottom: 25px;
-}
-.container .resultados-resumen .res-info{
-    width: 100%;
-    height: 35px;
-    background-color: var(--fondo);
-    padding-top: 5px;
-    color: white;
-    font-weight: 500;
-    margin-bottom: 25px;
-    
 }
 
 
@@ -463,37 +458,49 @@ table caption {
 
 @media (max-width:900px) {
 
-    header .header-cont {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        padding: 15px 25px;
+    header .header-titulo{
+        width: 100% ;
+        margin: auto;
     }
-    .
+    
+    header .header-img-container--img{
+        width: 100%;
+    }
+    header nav{
+        width: 100%;
+    }
+    header .header-img-container--img h1{ 
+        font-size: 2rem;
+        padding-left: 0px;
+        padding-top: 45px;
+        font-weight: 700;     
+    }
 
-    .container .pt1,
-    .container .pt2,
-    .container .pt3 {
+    header .header-img-container--img img{
+        padding-top:15px;
+    }
+    
+    .container .pt1 .pt1-formulario,
+    .container .pt2 .pt2-formulario,
+    .container .pt3 .pt3-formulario{
         grid-template-columns: 1fr;
     }
 
+    .container .pt3 .pt3-formulario{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .container .pt1 ,
+    .container .pt2 ,
+    .container .pt3 {
+        width: 90%;
+        padding: 10px;
+        min-width: 320px;
+    }
     .container form .boton button {
         width: 100%;
 
-    }
-
-
-    .container .coment-pt1 {
-        margin: auto;
-        background-color: var(--fondo);
-        padding-top: 5px;  
-        color: rgb(255, 255, 255);       
-        width: 100%;
-        height: .2rem;
-        font-size: .1rem;
-        padding: 0;
-        width: 70%;      
     }
 
     .container form label {
@@ -513,14 +520,13 @@ table caption {
     .container form input {
         width: 100%;
         text-align: center;
+        margin-bottom: 15px;
     }
 
-    header img,
-    header .inst a {
-        margin: 25px auto;
+   
 
-    }
-
+    /* estilos resposivos de los resultados */
+  
     .total-resultados {
         width: 320px;
         text-align: center;
@@ -552,10 +558,8 @@ table caption {
     }
 
 /* nuevos estilos ----------------------------- */
-    header .header-img-container--img h1{
-        padding-top: 25px;
-        font-size: 3rem;
-    }
 
 
 }
+
+

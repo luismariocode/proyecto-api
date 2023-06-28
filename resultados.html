@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="import" href="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
@@ -29,20 +30,25 @@
 
 <body>
 
-    <header>
+    <header class="mb-20">
 
-        <div class="header-cont">
-            <div class="img">
-                <img src="assets/logo_2-removebg-preview.png" alt="logo de la compañia">
-                <!-- <p>SINDICATO NACIONAL DE TRABAJADORES DEL SEGURO SOLCIAL</p> -->
-            </div>
-            <div class="inst"><a href="http://www.imss.gob.mx/" target="_blank">IMSS y RJP</a></div>
-
+        <nav class="bg-green-600">
+          <div class="header-titulo   bg-green-600">
+            <h3>IMSS</h3>
+          </div>
+        </nav>
+    
+    
+    
+        <div class="header-img-container">
+          <div class="header-img-container--img  ">
+    
+            <img src="assets/logo-sntte.svg" alt="logo de la compañia">
+            <h1 >Proyección aproximada de tu jubilación</h1>
+          </div>
+    
         </div>
-
-
-    </header>
-
+      </header>
 
     <div class="container" id="container">
 
@@ -52,37 +58,29 @@
                 <button id="btnExportar"></button>
             </div> -->
 
-
-        <div class="resultados-resumen">
-            <div class="res-info">
-                <p> Resumen
-                </p>
-
+            <div class="bg-teal-100 border-t-4 border-green-900 rounded-b text-teal-900 px-4 py-3 shadow-md msj-final p-5 mt-5 "
+            role="alert">
+            <div class="flex">
+              <div class="py-1 "><svg class="fill-current h-10 w-10 text-green-900 mr-4"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path
+                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                </svg></div>
+              <div>
+  
+                <p class="text-sm text-green-900">Recuerda que este es un simulador por lo cual los resultados pueden
+                  variar significativamente, pues dependen de que se cumplan los supuestos biométricos y financieros
+                  utilizados</p>
+                  <br>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque deserunt perferendis, delectus dignissimos in natus necessitatibus explicabo iste assumenda! Sed, dicta ea voluptatibus ab labore architecto in sit harum consequatur!</p>
+                  <br>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam alias veritatis at delectus? Saepe, iusto. Consequatur sunt vel error quae placeat corporis voluptatibus, velit qui soluta repudiandae fuga deleniti mollitia.</p>
+                  <br>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At provident voluptatem minus esse perspiciatis illum officia voluptates, asperiores unde eum! Modi nobis omnis natus architecto sunt quibusdam distinctio aut nihil.</p>
+              </div>
             </div>
-
-            <br><br>
-            <h3>IMSS</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nihil atque optio tempore, cumque
-                voluptate amet molestiae dolorem eaque architecto odio, delectus suscipit, error fugiat quaerat vero
-                eligendi vitae commodi.
-            </p>
-            <br>
-            <h3>CONVENIO LABORAL</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque maxime, similique quis asperiores
-                reiciendis, fugiat praesentium assumenda inventore, iste ad nam nisi minus totam velit. Quisquam quis
-                labore laboriosam maxime.</p>
-
-            <h3>Total</h3>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quia voluptates aut fuga impedit
-                asperiores laboriosam, quaerat hic culpa deleniti quos explicabo praesentium dicta vel, exercitationem,
-                placeat minus sed nihil!
-            </p>
-        </div>
-
-
-        <div class="result-pro-titulo">
-            <H1 id="result-pro-h1">Resultados de tu Proyeccion</H1>
-        </div>
+          </div>
+  
 
 
         <div class="total-resultados">

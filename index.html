@@ -25,8 +25,8 @@
 <body>
   <header>
 
-    <nav class="bg-green-900">
-      <div class="header-titulo  w-full bg-green-900">
+    <nav class="bg-green-600">
+      <div class="header-titulo   bg-green-600">
         <h3>IMSS</h3>
       </div>
     </nav>
@@ -37,7 +37,7 @@
       <div class="header-img-container--img  ">
 
         <img src="assets/logo-sntte.svg" alt="logo de la compañia">
-        <h1 class="text-5x1">Proyección aproximada de tu jubilación</h1>
+        <h1 >Proyección aproximada de tu jubilación</h1>
       </div>
 
     </div>
@@ -48,8 +48,7 @@
 
     <div class="container">
       <div class="sub-titulo ">
-        <p>PARA PODER REALIZAR LA PROYECCION DE TU JUBILACION NECESITO QUE ME AYUDES COMPLETANDO LA SIGUIENTE
-          INFORMACION:</p>
+        <p>Para poder realizar la proyección de tu jubilación necesito que me ayudes completando la siguiente información:</p>
       </div>
 
 
@@ -60,29 +59,30 @@
 
 
             <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
-            <label for="fechaIng">Fecha de afiliacion al SNTSS:</label>
+
             <input type="text" id="semanasCot" name="semansCot">
+            <label for="fechaIng">Fecha de afiliacion al SNTSS:</label>
             <input type="date" id="fechaIng" name="fechaIng">
 
 
             <label for="edadActual">Edad Actual</label>
-            <label for="sexo">Genero:</label>
+
             <input type="number" id="edadActual" name="edadActual">
 
-
+            <label for="sexo">Genero:</label>
             <select id="sexo">
               <option value="M">Masculino</option>
               <option value="F">Femenino</option>
             </select>
 
             <label for="estadoC">Estado civil:</label>
-            <label id="lbl-estadoC" for="edadCon">Edad del conyuge:</label>
+
             <select id="estadoC" onchange="habilitarInput()">
               <option value="soltero">Soltero/a</option>
               <option value="casado">Casado/a</option>
 
             </select>
-
+            <label id="lbl-estadoC" for="edadCon">Edad del conyuge:</label>
             <input type="number" id="edadCon" disable>
           </div>
         </div>
@@ -135,46 +135,53 @@
               <option value="Si">Si</option>
               <option value="No">No</option>
             </select>
-          
+
             <label for="comboTasa">Tasa de rendimiento anual esperado por arriba de la Inflaccion</label>
             <select id="comboTasa">
               <option value="2%">2%</option>
               <option value="3%">3%</option>
               <option value="4%">4%</option>
             </select>
-            <div id="msj-info" class="border-l-4 border-orange-500 text-orange-700 p-4 w-auto msj-pt3" >
+            <div id="msj-info" class="border-l-4 border-orange-500 text-orange-700 p-4 w-auto msj-pt3">
               <p> Es la tasa de interes anual que se supone que ganara en promedio la cuenta individual a lo largo del
                 periodo de acumulacion y de desacumulacion.
               </p>
-          </div>
-         
+            </div>
+
           </div>
 
         </div>
 
-        <div class="bg-teal-100 border-t-4 border-green-900 rounded-b text-teal-900 px-4 py-3 shadow-md msj-final p-5" role="alert">
+        <div class="bg-teal-100 border-t-4 border-green-900 rounded-b text-teal-900 px-4 py-3 shadow-md msj-final p-5"
+          role="alert">
           <div class="flex">
-            <div class="py-1 "><svg class="fill-current h-10 w-10 text-green-900 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+            <div class="py-1 "><svg class="fill-current h-10 w-10 text-green-900 mr-4"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path
+                  d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+              </svg></div>
             <div>
-              
-              <p class="text-sm text-green-900">Recuerda que este es un simulador por lo cual los resultados pueden variar significativamente, pues dependen de que se cumplan los supuestos biométricos y financieros utilizados</p>
+
+              <p class="text-sm text-green-900">Recuerda que este es un simulador por lo cual los resultados pueden
+                variar significativamente, pues dependen de que se cumplan los supuestos biométricos y financieros
+                utilizados</p>
             </div>
           </div>
         </div>
 
-     
 
-        
+
+
 
         <div class="boton">
-          <button type="submit">Realizar Calculo <span class="arrow-narrow-right"></span></button>
+          <button type="submit">Calcular →</button>
         </div>
 
       </form>
     </div>
 
   </main>
-  <footer>
+  <footer class="bg-green-600">
     <div class="contenedor">
       <p>Simulador Elaborado por <br> <a href="https://actuariales.com.mx/" target="_blank">Valuaciones Actuariales del
           Norte </a>
