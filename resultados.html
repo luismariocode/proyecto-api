@@ -30,7 +30,7 @@
 
 <body>
 
-    <header class="mb-20">
+    <!-- <header class="mb-20">
 
         <nav class="bg-green-600">
           <div class="header-titulo   bg-green-600">
@@ -48,7 +48,32 @@
           </div>
     
         </div>
+      </header> -->
+      <header class="shadow-md md:sticky md:top-0 "">
+        <!--nav-->
+        <!-- <nav class="bg-green-600 	shadow-lg">
+          <div class="header-titulo bg-green-600 mx-0">
+            <h3>IMSS</h3>
+          </div>
+        </nav> -->
+        <div class="backdrop-filter backdrop-blur-xl bg-lime-100			  md:flex md:justify-center md:blur:-sm xl:justify-start xl:pl-96 xl:h-96 2xl:justify-center 2xl:p-0"  >
+          <div class="md:w-1/2 lg:w-6/12 xl:w-10/12 2xl:w-6/12">
+            <div class="flex justify-center content-start md:justify-center xl:justify-start">
+              <div class="md:w-2/6 lg:w-4/6	xl:w-2/6" >
+                <img class="logo h-auto lg:h-80 xl:h-96  m-0" src="assets/logo-sntte.svg" alt="logo de la compañia">
+              </div>
+              <div class=" w-64 flex md:w-4/6	lg:w-5/6 2xl:w-3/6 lg:ml-11 xl:w-7/12">
+                <h1 class="flex items-center font-bold text-gray-600	h-auto text-4xl lg:text-6xl xl:text-7xl">Proyección aproximada de tu jubilación
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
+
+
+
+
 
     <div class="container" id="container">
 
@@ -83,25 +108,31 @@
   
 
 
-        <div class="total-resultados">
+          <div class="nav-bar" id="nav-bar">
+            <button onclick="mostrarResultado('resultado1')">Pensión Total <br> (IMSS más Convenio Laboral) </button>
+            <button onclick="mostrarResultado('resultado2')">Pensión del IMSS </button>
+            <button onclick="mostrarResultado('resultado3')">Pensión del Convenio Laboral SNTSS (15%) </button>
+        </div>
+
+
+        <table class="total-resultados">
             <!-- <div class="msj-result-pension">
                 <p>Tu pension a los </p> 
-    
+            
+        
+
+
             </div> -->
-            <p>Tu pension a los</p>
-            <p>Pension</p>
-            <p>Porcentaje al ultimo salrio de cotizacion</p>
-            <p>-</p>
-            <p>$</p>
-            <p>$</p>
-        </div>
+            <thead>
+                <th>Edad de jubilación</th>
+                <th>Porcentaje que representa la pensión sobre el último salario de cotización</th>
+            <thead>
+            
+            
+        </table>
 
 
-        <div class="nav-bar" id="nav-bar">
-            <button onclick="mostrarResultado('resultado1')">TOTAL </button>
-            <button onclick="mostrarResultado('resultado2')">IMSS </button>
-            <button onclick="mostrarResultado('resultado3')">CONVENIO LABORAL SNTSS (15%) </button>
-        </div>
+      
 
         <!-- 
         <table id="resultados-t">
@@ -185,9 +216,14 @@
 
 
 
+
         <div class="boton">
             <button onclick="generarPDF()">Descargar<span></span></button>
         </div>
+
+        <footer class="bg-gray-200">
+   
+        </footer>
 
     </div>
 

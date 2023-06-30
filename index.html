@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -18,107 +18,242 @@
 
   <!-- <link rel="stylesheet" href="css/tailwind.css"> -->
 
-  <title>Calculo pensiones</title>
+  <title>Proyección aproximada de tu jubilación</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
 </head>
 
 <body>
-  <header>
-
-    <nav class="bg-green-600">
-      <div class="header-titulo   bg-green-600">
+  <!--header-->
+  <header class="shadow-md md:sticky md:top-0  bg-gray-100">
+    <!--nav-->
+    <!-- <nav class="bg-green-600 	shadow-lg">
+      <div class="header-titulo bg-green-600 mx-0">
         <h3>IMSS</h3>
       </div>
-    </nav>
-
-
-
-    <div class="header-img-container">
-      <div class="header-img-container--img  ">
-
-        <img src="assets/logo-sntte.svg" alt="logo de la compañia">
-        <h1 >Proyección aproximada de tu jubilación</h1>
+    </nav> -->
+    <div class="backdrop-filter backdrop-blur-xl bg-lime-100	border-4 border-green-700		  md:flex md:justify-center md:blur:-sm xl:justify-start xl:pl-96 xl:h-96 2xl:justify-center 2xl:p-0"  >
+      <div class="md:w-1/2 lg:w-6/12 xl:w-10/12 2xl:w-6/12">
+        <div class="flex justify-center content-start md:justify-center xl:justify-start">
+          <div class="md:w-2/6 lg:w-4/6	xl:w-2/6" >
+            <img class="logo h-auto lg:h-80 xl:h-96  m-0" src="assets/logo-sntte.svg" alt="logo de la compañia">
+          </div>
+          <div class=" w-64 flex md:w-4/6	lg:w-5/6 2xl:w-3/6 lg:ml-11 xl:w-7/12">
+            <h1 class="flex items-center font-bold text-gray-600	h-auto text-4xl lg:text-6xl xl:text-7xl">Proyección aproximada de tu jubilación
+            </h1>
+          </div>
+        </div>
       </div>
-
     </div>
   </header>
 
-  <main>
+  <main >
 
 
-    <div class="container">
-      <div class="sub-titulo ">
-        <p>Para poder realizar la proyección de tu jubilación necesito que me ayudes completando la siguiente información:</p>
+    <div class="container   md:max-w-screen-lg">
+    
+    
+
+    <!--Antecedentes y Resumen de la normatividad-->
+    <div class="w-3/4 grid  justify-items-center border-2 border-yellow-200 p-6 mt-10 mb-10 w-10/12 sm:w-3/4 mx-auto bg-yellow-100 shadow-md ">
+      
+      <!--Botones de sección-->
+      <div class="w-full">
+        <button class="hidden">Antecedentes</button>
+        <button class="mx-5 ">Resumen de la normatividad</button>
       </div>
+      <!--End of Botones de sección--> 
+
+      <!--Antecedentes-->
+      <div class="h-auto mt-5 active">
+        <p class="text-justify text-5lg text-gray-600">
+          El esquema de jubilaciones y pensiones establece que los trabajadores con fecha de ingreso a partir de 2008 (Nueva Generación) tienen derecho a la cuenta individual contemplada en la Ley del IMSS y, adicionalmente, a la cuenta individual complementaria de acuerdo con el “Convenio Adicional para las Jubilaciones y Pensiones de los Trabajadores de Base de Nuevo Ingreso”. Dado lo anterior, estos trabajadores tendrán derecho a la suma de dos rentas vitalicias (pensiones) al momento de su jubilación.
+        </p>
+      </div>
+      <!--End of antecedentes-->
+
+      <!--Resumen de la normatividad-->
+      <div class="h-auto mt-5 ">
+        <p class="text-justify text-5lg text-gray-600 hidden">
+          El saldo de las cuentas individuales se calcula conforme a la cláusula tercera del “Convenio Adicional para las Jubilaciones y Pensiones de los Trabajadores de Base de Nuevo Ingreso”, el cual incluye:
+            <br/> <br/>•	Las cuotas obrero patronales del Seguro de Retiro, Cesantía en Edad Avanzada y Vejez establecidas en la Ley del Seguro Social;
+            <br/>•	Las cuotas del ramo de Cesantía en Edad Avanzada y Vejez establecidas en la Ley del Seguro Social a cargo del trabajador;
+            <br/>•	Las aportaciones del Estado por concepto de cuotas del Seguro de Retiro, Cesantía en Edad Avanzada y Vejez establecidas en la Ley del Seguro Social;
+            <br/>•	Las aportaciones del Estado por Cuota Social al Seguro de Retiro, Cesantía en Edad Avanzada y Vejez establecida en la Ley del Seguro Social;
+            <br/>•	Las aportaciones del trabajador del 7% al 15% del salario base señalado en el artículo 5 del RJP y del Fondo de Ahorro que anualmente paga el “IMSS” (El 7% inicia en 2008 y se incrementará un 1% cada año hasta llegar al 15%);
+            <br/>•	Los fondos de la subcuenta de vivienda que no hubiesen sido aplicados al otorgamiento de un crédito cuando así lo soliciten el trabajador o sus beneficiarios;
+            <br/>•	Los rendimientos que produzcan las inversiones y aportaciones de las cuentas individuales.
+        </p>
+      </div>
+      <!--End Resumen de la normatividad-->
+      
+    </div>
+
+    <!-- Instrucciones -->
+    <div class="w-3/4 grid justify-items-center  mt-10 mb-10 w-10/12 sm:w-3/4 mx-auto ">
+      <div class="w-full  items-center px-8 sm:px-0 border-red-900 md:w-8/12 lg:w-10/12	"> <!-- <div class="sub-titulo "> -->
+        <p class="text-2xl text-center font-medium text-green-900 lg:text-4xl lg:leading-normal"  >Para poder realizar la proyección de tu jubilación, completa la siguiente información:</p>
+      </div>
+    </div>
+    <!-- End of Instrucciones -->
 
 
-      <form id="myForm">
+    <!-- Formulario -->
+    <form id="myForm">
 
         <div class="pt1 ">
+          
+        
           <div class="pt1-formulario">
 
+            <div class="flex justify-self-start w-fit md:col-span-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-green-900 mt-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <h2 class="font-bold text-green-900 text-3xl px-2">Información general</h2>
+            </div>
 
-            <label for="semanasCot">Semanas Cotizadas al IMSS:</label>
 
-            <input type="text" id="semanasCot" name="semansCot">
-            <label for="fechaIng">Fecha de afiliacion al SNTSS:</label>
-            <input type="date" id="fechaIng" name="fechaIng">
+            <label for="semanasCot" class=" md:col-span-3">Semanas cotizadas al IMSS</label>
+
+            <input 
+              type="number"
+              id="semanasCot" 
+              name="semansCot" 
+              placeholder="Número de semanas" 
+              class="appearance-none block w-full sm:w-1/2	md:w-4/5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left  md:col-span-3 md:row-start-3 md:row-end-4">
+            
+            
+            
+            <label for="fechaIng" class=" md:col-span-3"> Fecha de afiliación al SNTSS</label>
+            <input type="date"
+              id="fechaIng"
+              name="fechaIng"
+              class="appearance-none block w-full md:w-4/5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left  md:col-span-3 md:row-start-3 md:row-end-4">
+              
 
 
-            <label for="edadActual">Edad Actual</label>
-
-            <input type="number" id="edadActual" name="edadActual">
-
-            <label for="sexo">Genero:</label>
-            <select id="sexo">
+            <label for="edadActual" class=" md:col-span-3">Edad actual</label>
+            <input type="number" 
+            min="15" max="100"
+              id="edadActual"
+              name="edadActual"
+              placeholder="Años"
+              class="appearance-none block w-full md:w-4/5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50  md:col-span-3 md:row-start-5 md:row-end-6">
+              
+           
+        
+            <label for="sexo" class=" md:col-span-3">Género</label>
+            <div class="flex  md:col-span-3 md:row-start-5 md:row-end-6">
+            <select id="sexo"
+                    class="block appearance-none w-full md:w-4/5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left ">
+              <option hidden selected><span class="option-default">Selecciona una opción</span></option>      
               <option value="M">Masculino</option>
               <option value="F">Femenino</option>
             </select>
+         
+          </div>
+         
+            
 
-            <label for="estadoC">Estado civil:</label>
+            <label for="estadoC" class=" md:col-span-3"  >Estado civil</label>
 
-            <select id="estadoC" onchange="habilitarInput()">
+            <select id="estadoC"
+                    onchange="habilitarInput()"
+                    class="md:w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left  md:col-span-3 md:row-start-7 md:row-end-8">
+                    
+              <option hidden ><span class="option-default">Selecciona una opción</span></option>      
               <option value="soltero">Soltero/a</option>
               <option value="casado">Casado/a</option>
 
             </select>
-            <label id="lbl-estadoC" for="edadCon">Edad del conyuge:</label>
-            <input type="number" id="edadCon" disable>
+            <label id="lbl-estadoC" for="edadCon" class=" md:col-span-3" style="opacity: 0;" >Edad del cónyuge</label>
+            <input type="number"
+                   id="edadCon"
+                   placeholder="Años"
+                   class="appearance-none block w-full md:w-4/5 bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50  md:col-span-3 "
+                   style="opacity: 0;"
+                   disable>
+
           </div>
         </div>
 
 
         <div class="pt2">
           <div class="pt2-formulario">
-            <label for="sueldoCot">Sueldo de cotizacion :</label>
+            <div class="flex justify-self-start md:col-span-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-green-900 mt-1">>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              
+              <h2 class="font-bold text-green-900 text-3xl px-2">Información financiera</h2>
+              
+              
+              
+            </div>
+            <label for="sueldoCot" class="md:col-span-6">Sueldo de cotización</label>
 
-            <input type="number" step="any" id="sueldoCot" placeholder="$">
+            <input type="number"
+                  step="any" 
+                  id="sueldoCot"
+                  placeholder="$0.00"
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50 md:w-11/12 md:h-3/4 md:mt-0 md:col-span-3 md:row-start-3 md:row-end-4">
 
-            <div id="msj-info" class="border-l-4 border-orange-500 text-orange-700 p-4 w-auto">
-              <p> Sueldo quincenal sobre el cual se calculan las cuotas y aportaciones al IMSS</p>
+            <div id="msj-info" class="border-l-4 	italic  blur-3xl	  border-yellow-500 bg-gradient-to-l from-yellow-100 to-yellow-200 rounded	 p-4 w-full md:col-span-3 md:row-start-3 md:row-end-4">
+              <p class="text-gray-800"> El sueldo de cotización es el sueldo quincenal sobre el cual se calculan las cuotas y aportaciones al IMSS.</p>
             </div>
 
 
 
-            <label for="montoIMSS">Monto de la cuenta individual en el IMSS institucional </label>
-            <select id="montoIMSS" onchange="habilitarInputIMSS()">
+            <label for="montoIMSS" class="w-full leading-none md:col-span-6 ">¿Conoces el monto de tu cuenta individual?</label>
+            <select id="montoIMSS" 
+                    onchange="habilitarInputIMSS()"
+                    class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left md:col-span-3 md:w-11/12">
+                    >
+                    <option hidden ><span class="option-default">Selecciona una opción</span></option>      
+
               <option value="1">Si lo conozco</option>
-              <option value="0">No lo conozco, Estimarlo</option>
+              <option value="0">No lo conozco</option>
 
             </select>
 
 
+            <input type="number"
+                    step="any"
+                    id="saldoIMSS"
+                    hidden
+                    placeholder="$ Monto"
+                    class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left md:col-span-2 ">
+                    
+            
+                    
 
-            <input type="number" step="any" id="saldoIMSS" placeholder="Monto $">
+            <label for="montoIMSS" class="leading-none md:col-span-6">¿Conoces el monto de tu cuenta individual del convenio laboral (15%)?</label>
+            <select id="montoIMSS" onchange="habilitarInputIMSS()"
+              class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left  md:col-span-4 md:w-11/12">
+              <option hidden ><span class="option-default">Selecciona una opción</span></option>      
 
-
-            <label for="montoIMSS">Monto de la cuenta individual del convenio laboral (15%) </label>
-            <select id="montoIMSS" onchange="habilitarInputIMSS()">
               <option value="1">Si lo conozco</option>
-              <option value="0">No lo conozco, Estimarlo</option>
+              <option value="0">No lo conozco</option>
             </select>
 
-            <input type="number" step="any" id="saldoRJP" placeholder="Monto $">
+
+            <div id="msj-info" class="border-l-4 	italic  blur-3xl	  border-yellow-500 bg-gradient-to-l from-yellow-100 to-yellow-200 rounded	 p-4 w-full md:col-span-3 md:row-start-5 md:row-end-6 md:col-start-4 md:col-start-7">
+              <p class="text-gray-800">La plataforma se encargará de estimar el monto de tu cuenta indivual.</p>
+            </div>
+
+            <div id="msj-info" class="border-l-4 	italic  blur-3xl	  border-yellow-500 bg-gradient-to-l from-yellow-100 to-yellow-200 rounded	 p-4 w-full md:col-span-3 md:row-start-5 md:row-end-6 md:col-start-4 md:col-start-7">
+              <p class="text-gray-800">La plataforma se encargará de estimar el monto de tu cuenta individual del convenio laboral.</p>
+            </div>
+
+            <input 
+              type="number"
+              step="any"
+              id="saldoRJP"
+              hidden
+              placeholder="$ Monto"
+              class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left">
+
+           
 
           </div>
 
@@ -130,21 +265,33 @@
 
         <div class="pt3">
           <div class="pt3-formulario">
-            <label for="comboInf">¿Has usado o piensas utilizar el INFONAVIT?</label>
-            <select id="comboInf">
+            <div class="flex justify-self-start w-fit md:col-span-6">
+              <h2 class="font-bold text-green-900 text-3xl px-2">Información Adicional</h2>
+            </div>
+            <label for="comboInf" class="leading-none  md:col-span-6">¿Has usado o piensas utilizar el INFONAVIT?</label>
+            <select id="comboInf"
+            class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left  md:col-span-6  md:w-7/12">
+            >
+              <option hidden ><span class="option-default">Selecciona una opción</span></option>      
+
               <option value="Si">Si</option>
               <option value="No">No</option>
             </select>
 
-            <label for="comboTasa">Tasa de rendimiento anual esperado por arriba de la Inflaccion</label>
-            <select id="comboTasa">
+
+            <label for="comboTasa" class="leading-none md:col-span-6">Elige la tasa de rendimiento anual esperado por arriba de la inflación:</label>
+            <select id="comboTasa"
+            class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left md:h-3/6 md:col-span-5   md:h-3/4 md:mt-11" >
+            
+              <option hidden ><span>Selecciona una opción</span></option>      
+
               <option value="2%">2%</option>
               <option value="3%">3%</option>
               <option value="4%">4%</option>
             </select>
-            <div id="msj-info" class="border-l-4 border-orange-500 text-orange-700 p-4 w-auto msj-pt3">
-              <p> Es la tasa de interes anual que se supone que ganara en promedio la cuenta individual a lo largo del
-                periodo de acumulacion y de desacumulacion.
+            <div id="msj-info"  class="border-l-4 	italic	  border-yellow-500 bg-gradient-to-l from-yellow-100 to-yellow-200 rounded	 p-4 w-full  md:mt-11 md:w-11/12 md:ml-11">
+              <p class="text-gray-800"> Es la tasa de interés anual que se supone que ganará en promedio la cuenta individual a lo largo del
+                periodo de acumulación y de desacumulación.
               </p>
             </div>
 
@@ -152,7 +299,11 @@
 
         </div>
 
-        <div class="bg-teal-100 border-t-4 border-green-900 rounded-b text-teal-900 px-4 py-3 shadow-md msj-final p-5"
+
+
+
+        <div class="min-w-full p-6 flex" style="justify-content: center;">
+          <div class="bg-green-100 border-t-4 w-full border-green-900 rounded-b text-teal-900 p-6 pb-10 shadow-md  m-0 md:w-3/4" 
           role="alert">
           <div class="flex">
             <div class="py-1 "><svg class="fill-current h-10 w-10 text-green-900 mr-4"
@@ -160,33 +311,40 @@
                 <path
                   d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
               </svg></div>
-            <div>
-
-              <p class="text-sm text-green-900">Recuerda que este es un simulador por lo cual los resultados pueden
+            <div> 
+            <div class="mt-7 	">
+              <p class="text-green-900 text-4xl">Recuerda que este es un simulador, por lo cual los resultados pueden
                 variar significativamente, pues dependen de que se cumplan los supuestos biométricos y financieros
-                utilizados</p>
+                utilizados.</p>
+              </div>
             </div>
           </div>
         </div>
 
+        </div>
+
+        
 
 
 
 
-        <div class="boton">
-          <button type="submit">Calcular →</button>
+
+        <div class="grid  m-11 w-full h-32 p-6 items-center justify-center">
+          <button type="submit" class="transition ease-in-out delay-150 inline-flex justify-center items-center	  w-full h-24 bg-green-600 text-white  py-2 px-11 rounded shadow-md hover:bg-green-900  ">
+            <p class="text-4xl bold">Calcular</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 m-5 h-10 ">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+            </svg>
+            
+          </button>
         </div>
 
       </form>
     </div>
 
   </main>
-  <footer class="bg-green-600">
-    <div class="contenedor">
-      <p>Simulador Elaborado por <br> <a href="https://actuariales.com.mx/" target="_blank">Valuaciones Actuariales del
-          Norte </a>
-      </p>
-    </div>
+  <footer class="bg-gray-200">
+   
   </footer>
   <script src="js/script.js"> </script>
 </body>
