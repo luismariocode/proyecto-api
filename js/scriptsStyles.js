@@ -16,6 +16,9 @@
     buttonNormativa.classList.add("bg-yellow-200");
  }
 
+
+
+
  // Función para mostrar la normativa y ocultar los antecedentes
  function mostrarNormativa() {
     textAntecedentes.classList.remove("block");
@@ -31,24 +34,26 @@
 //    buttonAntecedentes.classList.remove("bg-yellow-200");
  }
 
+
+ 
+
+
  //Funcion validar fecha entre  el 01/01/2008 y mañana
     function handleValidarSemanas(input) {
             
-            console.log(input.value);
+            
             input.max = 2600;
             input.min = 0;
             
             if (input.value < input.min || input.value > input.max) {
-                
                 input.classList.remove("border-gray-300") ;
-            input.classList.remove("border-green-300") ;
-            input.classList.add("border-red-500");
+                input.classList.remove("border-green-300") ;
+                input.classList.add("border-red-500");
             }else{
                 input.classList.remove("border-gray-300") ;
                 input.classList.remove("border-red-500");
                 input.classList.add("border-green-300") ;
             }
-
     }
 
 
@@ -72,21 +77,24 @@
         }
     };
     
-    function handleValidarEdad (input) {
-        console.log(input.value);
+    function handleValidarEdad(input) {
+
         input.max = 100;
         input.min = 15;
+
         
-        if (input.value < input.min || input.value > input.max) {    
-            input.classList.remove("border-gray-300") ;
-            input.classList.remove("border-green-300") ;
-            input.classList.add("border-red-500");
+        if(input.value <= parseInt(input.max)  && input.value >= parseInt(input.min)){
+                input.classList.remove("border-gray-300") ;
+                input.classList.remove("border-red-500") ;
+                input.classList.add("border-green-500");
         }else{
             input.classList.remove("border-gray-300") ;
-            input.classList.remove("border-red-500");
-            input.classList.add("border-green-300") ;
+            input.classList.remove("border-green-500");
+            input.classList.add("border-red-500") ;
         }
-    }
+        
+    } 
+
 
     function handleValidarSelected(input){
         if(input.value == "Selecciona una opción"){
@@ -98,6 +106,26 @@
             input.classList.remove("border-red-500");
             input.classList.add("border-green-300") ;
         }
+    }
+
+    function handleValidarFormat(input){
+        if(input.value == ""){
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-green-300") ;
+            input.classList.add("border-red-500");
+        }else{
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-red-500");
+            input.classList.add("border-green-300") ;
+        }
+
+        // input.value = Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN'}).format(input.value)
+
+        // input.value = Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN'}).format(input.value)
+
+
+
+
     }
 
   
