@@ -31,36 +31,73 @@
 //    buttonAntecedentes.classList.remove("bg-yellow-200");
  }
 
- // Asignar los manejadores de eventos a los botones
- buttonAntecedentes.addEventListener("click", mostrarAntecedentes);
- buttonNormativa.addEventListener("click", mostrarNormativa);
+ //Funcion validar fecha entre  el 01/01/2008 y mañana
+    function handleValidarSemanas(input) {
+            
+            console.log(input.value);
+            input.max = 2600;
+            input.min = 0;
+            
+            if (input.value < input.min || input.value > input.max) {
+                
+                input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-green-300") ;
+            input.classList.add("border-red-500");
+            }else{
+                input.classList.remove("border-gray-300") ;
+                input.classList.remove("border-red-500");
+                input.classList.add("border-green-300") ;
+            }
 
-  // Obtener referencia al elemento del DOM
-  const inputMoneda = document.getElementById("sueldoCot");
+    }
 
-  // Función para formatear el valor como moneda con separador de miles
-  function formatearMoneda(valor) {
-    // Eliminar cualquier caracter que no sea un dígito o un punto decimal
-    valor = valor.replace(/[^\d.]/g, "");
-    
-    // Separar la parte decimal de la parte entera
-    const partes = valor.split(".");
-    let parteEntera = partes[0];
-    let parteDecimal = partes[1] || "";
-    
-    // Agregar separadores de miles a la parte entera
-    parteEntera = parteEntera.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    
-    // Unir la parte entera y la parte decimal con el punto decimal
-    valor = parteEntera + (parteDecimal.length ? "." + parteDecimal : "");
-    
-    return valor;
-  }
 
-  // Función para actualizar el valor formateado mientras el usuario escribe
-  function actualizarValor() {
-    inputMoneda.value = formatearMoneda(inputMoneda.value);
-  }
+    function handleValidarFecha(input) {
 
-  // Asignar el manejador de eventos al campo de entrada
-  inputMoneda.addEventListener("input", actualizarValor);
+        const fechaIngresada = input.value;
+
+        const inputLimits = document.getElementById("fechaIng");
+        inputLimits.max = new Date().toISOString().split("T")[0];
+        inputLimits.min = "2008-01-01";
+        
+        if (fechaIngresada < inputLimits.min || fechaIngresada > inputLimits.max) {
+            
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-green-300") ;
+            input.classList.add("border-red-500");
+        }else{
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-red-500");
+            input.classList.add("border-green-300") ;
+        }
+    };
+    
+    function handleValidarEdad (input) {
+        console.log(input.value);
+        input.max = 100;
+        input.min = 15;
+        
+        if (input.value < input.min || input.value > input.max) {    
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-green-300") ;
+            input.classList.add("border-red-500");
+        }else{
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-red-500");
+            input.classList.add("border-green-300") ;
+        }
+    }
+
+    function handleValidarSelected(input){
+        if(input.value == "Selecciona una opción"){
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-green-300") ;
+            input.classList.add("border-red-500");
+        }else{
+            input.classList.remove("border-gray-300") ;
+            input.classList.remove("border-red-500");
+            input.classList.add("border-green-300") ;
+        }
+    }
+
+  
