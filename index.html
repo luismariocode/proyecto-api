@@ -64,9 +64,9 @@
         
         <!--Botones de sección-->
         <div class="w-full flex" style="justify-content: start;">
-          <button id="button-antecedentes"
+          <button id="button-antecedentes" onclick="mostrarAntecedentes()"
             class="shadow-md section-active  transition ease-in-out delay-150  bg-yellow-300 hover:bg-yellow-100 text-gray-700 rounded-2xl px-5 text-2xl leading-normal">Antecedentes</button>
-          <button id="button-normativa"
+          <button id="button-normativa" onclick="mostrarNormativa()"
             class="shadow-md section-inactive  bg-yellow-200 hover:bg-yellow-100 transition ease-in-out delay-150  text-gray-700 rounded-2xl px-5 mx-5 text-2xl leading-normal">Resumen
             de la normatividad</button>
         </div>
@@ -240,8 +240,10 @@
               <label for="sueldoCot" class="">Sueldo de cotización</label>
             </div>
             <div class="mt-5 md:min-w-max ">
-              <input type="number" step="any" id="sueldoCot" placeholder="$0.00"
-                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50 " />
+              <input type="number" step="any" id="sueldoCot" 
+                onblur="handleValidarFormat(this)"
+                placeholder="$0.00"
+                class="text-2xl block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50 " />
             </div>
             <!-- Msj de sueldo de cotización-->
             <div class="mt-5 md:col-span-2 md:ml-10">
@@ -260,6 +262,7 @@
             </div>
             <div class="mt-8 opciones-sueldo-imss ">
               <select id="montoIMSS" onchange="habilitarInputIMSS()"
+                onblur="handleValidarSelected(this)"
                 class="text-xl block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left ">
                 <option hidden><span class="option-default">Selecciona una opción</span></option>
                 <option value="1">Si lo conozco</option>
@@ -273,7 +276,8 @@
                 <p class="text-gray-800"> La plataforma se encargará de estimar el monto de tu cuenta indivual.</p>
               </div>
               <div class="hidden mt-3 md:w-1/2">
-                <input type="number" step="any" id="saldoIMSS" placeholder="$0.00"
+                <input type="number" step="any" id="saldoIMSS" placeholder="$0.00" 
+                  onblur="handleValidarEdad (this)"
                   class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50 ">
               </div>
               <!--/End mensaje monto de IMSS-->
@@ -287,6 +291,7 @@
             </div>
             <div class="mt-8 opciones-sueldo-imss ">
               <select id="montoIMSS" onchange="habilitarInputIMSS()"
+                onblur="handleValidarSelected(this)"
                 class="text-xl block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left ">
                 <option hidden><span class="option-default">Selecciona una opción</span></option>
                 <option value="1">Si lo conozco</option>
@@ -304,6 +309,7 @@
               <!-- input monto del estimado -->
               <div class="hidden mt-3 md:w-1/2">
                 <input type="number" step="any" id="saldoRJP" placeholder="$0.00"
+                  onblur="handleValidarEmpty(this)"
                   class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left disabled:opacity-50 ">
               </div>
             </div>
@@ -325,6 +331,7 @@
             </div>
             <div class="mt-8 md:w-10/12 md:min-w-max opciones-infonavit ">
               <select id="comboInf"
+                onblur="handleValidarSelected(this)"
                 class="block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left  ">
                 <option hidden><span class="option-default">Selecciona una opción</span></option>
                 <option value="Si">Si</option>
@@ -342,6 +349,7 @@
 
             <div class="mt-8 md:w-10/12 md:min-w-max ">
               <select id="comboTasa"
+                onblur="handleValidarSelected(this)"
                 class="w-4/5 block appearance-none w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-5 px-7 leading-tight focus:outline-none focus:bg-white focus:border-gray-400 placeholder:text-left ">
                 <option hidden><span>Selecciona una opción</span></option>
 
